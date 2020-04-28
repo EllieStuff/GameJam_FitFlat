@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PointsManager : MonoBehaviour
 {
-    public int score = 0;   //puntuacio actual
-    //public bool challengeAchieved = false;  //Per indicar que l'exercisi ha estat completat (crec que no fa falta)
-    public Const.Exercise exerType = Const.Exercise.SENTADILLAS;    //Tipus d'exercisi a fer
+    //public Const.Exercise exerType = Const.Exercise.SENTADILLAS;    //Tipus d'exercisi a fer
 
-    private Const.Difficulty difficulty = Const.Difficulty.MEDIUM;  //Dificultat seleccionada
+    //private Const.Difficulty difficulty = Const.Difficulty.MEDIUM;  //Dificultat seleccionada
     //private int exercisesQuantity = 0;  //Numero de vegades que el jugador diu que ha fet un exercisi
+
+    private int score = 0;   //puntuacio actual
     private ExercisesClass exercises;   //Suposarem que el script estara al mateix gameObject
     private int level = 0;  //Pis de la torre en el que el jugador es troba actualment
 
@@ -21,16 +21,30 @@ public class PointsManager : MonoBehaviour
         
     }
 
-    void RefreshScore(int exercisesQuantity)
+    public void SetNewScore(Const.Difficulty difficulty, int exercisesQuantity, Const.Exercise exerType)
     {
         //Pitjor dels casos += 8
         //Millor dels casos += 107
-        score += (int)(((int)difficulty + 1) * 11 * GetMultimplier(exercisesQuantity));
+        score += (int)(((int)difficulty + 1) * 11 * GetMultimplier(difficulty, exercisesQuantity, exerType));
+        level++;
 
     }
 
+    public int GetScore()
+    {
 
-    float GetMultimplier(int exercisesQuantity)
+        return score;
+    }
+
+    public int GetLevel()
+    {
+        return level;
+    }
+
+
+
+
+    private float GetMultimplier(Const.Difficulty difficulty, int exercisesQuantity, Const.Exercise exerType)
     {
         //No es necessari declarables pero les he deixat prq s'entengui millor el codi d'abaix
         int lowerQuantity = exercises.GetInfo((int)difficulty, (int)Const.Quantity.LOW, (int)exerType);
