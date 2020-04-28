@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject.Find("ChooseLevel").SetActive(false);
     }
 
     // Update is called once per frame
