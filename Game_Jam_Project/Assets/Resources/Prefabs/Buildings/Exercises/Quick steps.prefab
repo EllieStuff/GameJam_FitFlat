@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1471961677797446889}
   - component: {fileID: 6976748941185849502}
   m_Layer: 0
-  m_Name: Quick steps
+  m_Name: Quick Steps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exerciseType: 2
   explanation: {fileID: 0}
-  controller: {fileID: 0}
+  controller: {fileID: 9100000, guid: 5b89e3144959d8c4aa92292656a5f5f4, type: 2}
   timeExercise: 45
   isCompleted: 0
   exerciseCombo: 0

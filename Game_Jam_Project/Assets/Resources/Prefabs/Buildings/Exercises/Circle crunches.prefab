@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6392253335447871154}
   - component: {fileID: 5776824157271436754}
   m_Layer: 0
-  m_Name: Circle crunches
+  m_Name: Circle Crunches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exerciseType: 3
   explanation: {fileID: 0}
-  controller: {fileID: 0}
+  controller: {fileID: 9100000, guid: 021180be337ed4a459dcf386f58e89c4, type: 2}
   timeExercise: 45
   isCompleted: 0
   exerciseCombo: 0

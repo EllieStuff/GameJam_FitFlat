@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6300494379634924621}
   - component: {fileID: 7438501531446385199}
   m_Layer: 0
-  m_Name: Push ups
+  m_Name: Push Ups
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exerciseType: 7
   explanation: {fileID: 0}
-  controller: {fileID: 0}
+  controller: {fileID: 9100000, guid: 32f29d933d7587844848c0297a5aabb4, type: 2}
   timeExercise: 45
   isCompleted: 0
   exerciseCombo: 0

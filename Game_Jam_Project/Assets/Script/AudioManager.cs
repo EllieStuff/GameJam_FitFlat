@@ -39,6 +39,8 @@ public class AudioManager : MonoBehaviour
         {
             b.onClick.AddListener(() => PlayClickButton());
         }
+
+        GameObject.Find("OptionsMenu").SetActive(false);
     }
 
     void Update()

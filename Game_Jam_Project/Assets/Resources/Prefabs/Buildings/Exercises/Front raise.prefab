@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6433597316069093764
+--- !u!1 &5061464435322430384
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6198288709864952457}
-  - component: {fileID: 4814856139203555242}
+  - component: {fileID: 8025229128289515662}
+  - component: {fileID: 4736783904576435065}
   m_Layer: 0
-  m_Name: Front raise
+  m_Name: Front Raise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6198288709864952457
+--- !u!4 &8025229128289515662
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6433597316069093764}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.3551688, y: 0.5730419, z: -1.9826465}
+  m_GameObject: {fileID: 5061464435322430384}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5405972, y: 1.9848391, z: -2.5335546}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4814856139203555242
+--- !u!114 &4736783904576435065
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6433597316069093764}
+  m_GameObject: {fileID: 5061464435322430384}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1023c698596c0004a9674001f38dcd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exerciseType: 17
+  exerciseType: 18
   explanation: {fileID: 0}
-  controller: {fileID: 0}
-  timeExercise: 60
+  controller: {fileID: 9100000, guid: dfaa38446dea0c54d92625e056f7b0db, type: 2}
+  timeExercise: 0
   isCompleted: 0
   exerciseCombo: 0
   question: {fileID: 0}

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8809416351935012747
+--- !u!1 &180663171775093147
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4842607901289489831}
-  - component: {fileID: 7946163586116341034}
+  - component: {fileID: 3337289641013155896}
+  - component: {fileID: 2405509235043203793}
   m_Layer: 0
-  m_Name: Biceps curl
+  m_Name: Biceps Curl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4842607901289489831
+--- !u!4 &3337289641013155896
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8809416351935012747}
+  m_GameObject: {fileID: 180663171775093147}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.3551688, y: 0.5730419, z: -1.9826465}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,22 +31,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7946163586116341034
+--- !u!114 &2405509235043203793
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8809416351935012747}
+  m_GameObject: {fileID: 180663171775093147}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1023c698596c0004a9674001f38dcd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exerciseType: 15
+  exerciseType: 16
   explanation: {fileID: 0}
-  controller: {fileID: 0}
-  timeExercise: 60
+  controller: {fileID: 9100000, guid: e2b681eb0729274428f618edb252ef8d, type: 2}
+  timeExercise: 45
   isCompleted: 0
   exerciseCombo: 0
   question: {fileID: 0}
