@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: b700690ea991dc740805c1735bbbac0c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Musk Night
+  fontNames:
+  - Musk Night
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2bc788a4bacf45a45b9e448ffb3908a4, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
