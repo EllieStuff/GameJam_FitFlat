@@ -16,7 +16,8 @@ public class Building : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        durationExercise = GetDurationExercise();
+
     }
 
     // Update is called once per frame
@@ -31,5 +32,16 @@ public class Building : MonoBehaviour
         {
             flat[exerciseID].StartExercice(animator, exerciseID);
         }
+    }
+
+    float GetDurationExercise()
+    {
+        float tmpTime = 0;
+        foreach(ExercisesClass exer in flat)
+        {
+            tmpTime += exer.timeExercise;
+        }
+
+        return tmpTime;
     }
 }
