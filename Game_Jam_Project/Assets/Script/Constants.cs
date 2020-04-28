@@ -17,6 +17,7 @@ public static class Constants
         CROSS_JUMPS,
         PIKE_WALK,
         STRETCHING,
+        STRETCHING_2,
         JUMPING_JACKS,
         AIR_SQUAD,
         AIR_SQUAD_BENT_ARMS,

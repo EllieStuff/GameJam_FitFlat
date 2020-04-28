@@ -34,4 +34,5 @@ public class ExercisesClass : MonoBehaviour
         animator.runtimeAnimatorController = controller;
         id++;
     }
+
 }
