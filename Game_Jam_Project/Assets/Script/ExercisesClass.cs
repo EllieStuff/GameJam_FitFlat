@@ -29,10 +29,9 @@ public class ExercisesClass : MonoBehaviour
         
     }
 
-    public void StartExercice(Animator animator, int id)
+    public void StartExercice(Animator animator)
     {
         animator.runtimeAnimatorController = controller;
-        id++;
     }
 
 }

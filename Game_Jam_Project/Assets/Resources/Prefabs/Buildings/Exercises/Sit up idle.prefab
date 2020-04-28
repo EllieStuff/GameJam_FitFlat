@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exerciseType: 0
   explanation: {fileID: 0}
-  controller: {fileID: 0}
+  controller: {fileID: 9100000, guid: de5a6049c1038d646a4dad8bdc4f20d3, type: 2}
   timeExercise: 60
   isCompleted: 0
   exerciseCombo: 0

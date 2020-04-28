@@ -30,7 +30,15 @@ public class Building : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            flat[exerciseID].StartExercice(animator, exerciseID);
+            flat[exerciseID].StartExercice(animator);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            exerciseID++;
         }
     }
 
