@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class Constants
 {
-    
+    public enum Genere { MAN, WOMAN };
     public enum ExerciseType {
         SIT_UP_IDLE,
         SIT_UP,
