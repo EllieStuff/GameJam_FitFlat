@@ -43,10 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1023c698596c0004a9674001f38dcd94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exerciseType: 10
+  exerciseType: 11
   explanation: {fileID: 0}
   controller: {fileID: 0}
   timeExercise: 0
-  question: {fileID: 0}
   isCompleted: 0
   exerciseCombo: 0
+  question: {fileID: 0}
+  answers: []
