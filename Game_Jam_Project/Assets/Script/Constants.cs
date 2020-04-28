@@ -4,7 +4,6 @@ using UnityEngine;
 
 public static class Constants
 {
-    public enum Difficulty { LOW, MEDIUM, HIGH }; 
     
     public enum ExerciseType {
         SIT_UP_IDLE,
