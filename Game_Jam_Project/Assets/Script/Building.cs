@@ -5,10 +5,12 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {
     Constants.Tracklist track;
-    List<ExercisesClass> flat;
+    [SerializeField] List<ExercisesClass> flat;
+    [SerializeField] Animator animator;
+    [SerializeField] RuntimeAnimatorController controller;
     int flatPuntuation;
     float durationExercise;
-
+    int exerciseID = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +21,13 @@ public class Building : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            flat[exerciseID].StartExercice(animator, exerciseID);
+        }
     }
 }
