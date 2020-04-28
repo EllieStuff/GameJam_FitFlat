@@ -46,7 +46,8 @@ MonoBehaviour:
   exerciseType: 3
   explanation: {fileID: 0}
   controller: {fileID: 0}
-  timeExercise: 0
-  question: {fileID: 0}
+  timeExercise: 45
   isCompleted: 0
   exerciseCombo: 0
+  question: {fileID: 0}
+  answers: []
