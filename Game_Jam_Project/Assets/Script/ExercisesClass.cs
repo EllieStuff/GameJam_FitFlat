@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using TMPro;
 using UnityEngine.Animations;
+using UnityEngine.Playables;
 
 public class ExercisesClass : MonoBehaviour
 {
-    public Constants.ExerciseType exerciseType;
-    public TextMeshProUGUI explanation;
-    public Animator exerciseAnimation;
-    public float timeExercise;
+    [SerializeField] Constants.ExerciseType exerciseType;
+    [SerializeField] TextMeshProUGUI explanation;
+    [SerializeField] RuntimeAnimatorController controller;
+    [SerializeField] float timeExercise;
     //Questions
-    public bool isCompleted;
-    public float exerciseCombo;
+    [SerializeField] bool isCompleted;
+    [SerializeField] float exerciseCombo;
 
     //    private void Start()
     //    {
@@ -48,8 +50,9 @@ public class ExercisesClass : MonoBehaviour
     //        >>>>>>> Stashed changes
     //            }
 
-    //    private void Update()
-    //    {
-
-    //    }
+    public void StartExercice(Animator animator, int id)
+    {
+        animator.runtimeAnimatorController = controller;
+        id++;
+    }
 }
