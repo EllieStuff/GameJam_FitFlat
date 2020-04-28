@@ -8,47 +8,26 @@ using UnityEngine.Playables;
 
 public class ExercisesClass : MonoBehaviour
 {
-    [SerializeField] Constants.ExerciseType exerciseType;
-    [SerializeField] TextMeshProUGUI explanation;
-    [SerializeField] RuntimeAnimatorController controller;
-    [SerializeField] float timeExercise;
-    //Questions
+    public Constants.ExerciseType exerciseType;
+    public TextMeshProUGUI explanation;
+    public RuntimeAnimatorController controller;
+    public float timeExercise;
     [SerializeField] bool isCompleted;
     [SerializeField] float exerciseCombo;
 
-    //    private void Start()
-    //    {
-    //        <<<<<<< Updated upstream
-    //        Sentadillas
-    //        exercises[(int)Const.Difficulty.LOW, (int)Const.Quantity.LOW, (int)Const.Exercise.SENTADILLAS] = 10;
-    //        exercises[(int)Const.Difficulty.LOW, (int)Const.Quantity.HIGH, (int)Const.Exercise.SENTADILLAS] = 30;
+    [Header("Question")]
+    public TextMeshProUGUI question;
+    public TextMeshProUGUI[] answers;
 
-    //        exercises[(int)Const.Difficulty.MEDIUM, (int)Const.Quantity.LOW, (int)Const.Exercise.SENTADILLAS] = 15;
-    //        exercises[(int)Const.Difficulty.MEDIUM, (int)Const.Quantity.HIGH, (int)Const.Exercise.SENTADILLAS] = 35;
+    private void Start()
+    {
+        
+    }
 
-    //        exercises[(int)Const.Difficulty.HIGH, (int)Const.Quantity.LOW, (int)Const.Exercise.SENTADILLAS] = 20;
-    //        exercises[(int)Const.Difficulty.HIGH, (int)Const.Quantity.HIGH, (int)Const.Exercise.SENTADILLAS] = 40;
-
-
-    //        Flexiones
-    //        exercises[(int)Const.Difficulty.LOW, (int)Const.Quantity.LOW, (int)Const.Exercise.FLEXIONES] = 5;
-    //        exercises[(int)Const.Difficulty.LOW, (int)Const.Quantity.HIGH, (int)Const.Exercise.FLEXIONES] = 20;
-
-    //        exercises[(int)Const.Difficulty.MEDIUM, (int)Const.Quantity.LOW, (int)Const.Exercise.FLEXIONES] = 10;
-    //        exercises[(int)Const.Difficulty.MEDIUM, (int)Const.Quantity.HIGH, (int)Const.Exercise.FLEXIONES] = 30;
-
-    //        exercises[(int)Const.Difficulty.HIGH, (int)Const.Quantity.LOW, (int)Const.Exercise.FLEXIONES] = 20;
-    //        exercises[(int)Const.Difficulty.HIGH, (int)Const.Quantity.HIGH, (int)Const.Exercise.FLEXIONES] = 40;
-
-
-    //        Etc.
-
-
-
-    //        =======
-
-    //        >>>>>>> Stashed changes
-    //            }
+    private void Update()
+    {
+        
+    }
 
     public void StartExercice(Animator animator, int id)
     {

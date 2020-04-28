@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2315020772512444672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6423880750395367348}
+  - component: {fileID: 8796769043523404197}
+  m_Layer: 0
+  m_Name: Building Hard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6423880750395367348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2315020772512444672}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.3551688, y: 0.5730419, z: -1.9826465}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8796769043523404197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2315020772512444672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216d9941e57032045b0dba303539d5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulty: 2
+  flat:
+  - {fileID: 6976748941185849502, guid: b2bfe4dbcf9f72b40b6874742c0e00b8, type: 3}
+  - {fileID: 2066965013926339213, guid: 959c0c3e990127c41a7e9fe54afd8537, type: 3}
+  - {fileID: 2405509235043203793, guid: f779e9c5271089449bd9c681017b33be, type: 3}
+  - {fileID: 8357366341870993743, guid: 46e7e911fbccdc64a8b5a22eaaf697df, type: 3}
+  - {fileID: 4736820575381247598, guid: b4d58ec1c2c8a9a4c95bf9d6b3a28149, type: 3}
+  - {fileID: 92885747120512905, guid: 535a7ff8b91ee664596f163b4908cddc, type: 3}
+  - {fileID: 4814856139203555242, guid: 39fd8c0355efcda4fac9fc9e1e5f35e8, type: 3}
+  - {fileID: 590326435308178725, guid: 748fff02919916844bb479b04642379a, type: 3}
+  - {fileID: 7438501531446385199, guid: 6f8cd8a4d0ef82149af2b3a85a728c71, type: 3}
+  - {fileID: 598100966460533383, guid: 319de7850c4d4014a811aba29afb90e2, type: 3}
+  - {fileID: 7270972554346734014, guid: 8a0311533ac467a49b7a0f3d4d93b9a3, type: 3}
+  - {fileID: 7946163586116341034, guid: f0a31f60dd94db54db798a3b368c36c2, type: 3}
+  - {fileID: 8357366341870993743, guid: 46e7e911fbccdc64a8b5a22eaaf697df, type: 3}
+  - {fileID: 6484269395933183093, guid: 609f86d26c36fc5459c2e88eaa8cdec1, type: 3}
+  - {fileID: 6484269395933183093, guid: 609f86d26c36fc5459c2e88eaa8cdec1, type: 3}
+  animator: {fileID: 0}
+  controller: {fileID: 0}
+  flatPuntuation: 0
+  durationExercise: 0

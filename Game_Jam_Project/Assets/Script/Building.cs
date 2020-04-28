@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
-    Constants.Tracklist track;
-    [SerializeField] List<ExercisesClass> flat;
+    public Constants.Difficulties difficulty;
+    [SerializeField] ExercisesClass[] flat;
     [SerializeField] Animator animator;
     [SerializeField] RuntimeAnimatorController controller;
-    int flatPuntuation;
-    float durationExercise;
+    public int flatPuntuation;
+    public float durationExercise;
+
     int exerciseID = 0;
+
     // Start is called before the first frame update
     void Start()
     {

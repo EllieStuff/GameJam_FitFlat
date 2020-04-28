@@ -10,7 +10,8 @@ public static class Constants
         SIT_UP,
         QUICK_STEPS,
         CIRCLE_CRUNCHES,
-        BREATH,
+        BREATH_IDLE,
+        BREATH_SITTING_IDLE,
         PLANCH,
         PUSH_UPS,
         CROSS_JUMPS,
@@ -25,7 +26,7 @@ public static class Constants
         FRONT_RAISE
     };   
 
-    public enum Tracklist { SHORT, MEDIUM, LARGE };  
+    public enum Difficulties { EASY, MEDIUM, HARD };  
 
 
 }

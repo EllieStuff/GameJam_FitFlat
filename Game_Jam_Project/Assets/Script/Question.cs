@@ -5,8 +5,7 @@ using TMPro;
 
 public class Question : MonoBehaviour
 {
-    public TextMeshProUGUI question;
-    public List<TextMeshProUGUI> answers;
+   
     
     // Start is called before the first frame update
     void Start()
