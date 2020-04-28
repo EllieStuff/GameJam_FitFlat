@@ -1,15 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.Animations;
 
 public class ExercisesClass : MonoBehaviour
 {
-                                      //3 modes de dificultat i dos marges per a decidir la quantitat apropiada
-    private int[,,] exercises = new int[3, 2, (int)Const.Exercise.COUNT];
+    public Constants.ExerciseType exerciseType;
+    public TextMeshProUGUI explanation;
+    public Animator exerciseAnimation;
+    public float timeExercise;
+    //Questions
+    public bool isCompleted;
+    public float exerciseCombo;
 
-
-    private void Awake()
+    private void Start()
     {
+<<<<<<< Updated upstream
         //Sentadillas
         exercises[(int)Const.Difficulty.LOW, (int)Const.Quantity.LOW, (int)Const.Exercise.SENTADILLAS] = 10;
         exercises[(int)Const.Difficulty.LOW, (int)Const.Quantity.HIGH, (int)Const.Exercise.SENTADILLAS] = 30;
@@ -36,14 +43,13 @@ public class ExercisesClass : MonoBehaviour
         
 
 
+=======
+        
+>>>>>>> Stashed changes
     }
 
-
-    public int GetInfo(int difficulty, int quantity, int exerType)
+    private void Update()
     {
-
-        return exercises[difficulty, quantity, exerType];
+        
     }
-
-
 }
