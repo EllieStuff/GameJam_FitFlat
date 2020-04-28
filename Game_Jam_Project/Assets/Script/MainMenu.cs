@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
         // exitBtn = GameObject.Find("ExitButton").GetComponent<Button>();
 
         playBtn.onClick.AddListener(()=>LoadScene("Gameplay"));
-        // exitBtn.onClick.AddListener(() => ExitGame());
+        // ivexitBtn.onClick.AddListener(() => ExitGame());
     }
 
     void LoadScene(string name)
