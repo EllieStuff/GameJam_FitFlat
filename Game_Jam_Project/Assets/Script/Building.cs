@@ -5,7 +5,6 @@ using UnityEngine;
 public class Building : MonoBehaviour
 {
     Constants.Tracklist track;
-    Constants.Difficulty difficulty;
     List<ExercisesClass> flat;
     int flatPuntuation;
     float durationExercise;

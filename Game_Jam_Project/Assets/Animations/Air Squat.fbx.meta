@@ -177,7 +177,7 @@ ModelImporter:
     4300030: SM_Chr_Business_Male_02
     4300032: SM_Chr_Business_Male_01
     4300034: SM_Chr_Boss_Male_01
-    7400000: AirSquatClip
+    7400000: AIR_SQUAD
     9500000: //RootNode
     13700000: SM_Chr_Boss_Female_01
     13700002: SM_Chr_Boss_Male_01
@@ -227,7 +227,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: AirSquatClip
+      name: AIR_SQUAD
       takeName: mixamo.com
       firstFrame: 0
       lastFrame: 56
