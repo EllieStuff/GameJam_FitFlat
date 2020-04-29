@@ -26,8 +26,6 @@ public class AudioManager : MonoBehaviour
         backgroundMusic = audio[0];
         soundEffects = audio[1];
 
-
-
         // Llegim el valor del volum guardat i l'actualitzem
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0);
         SetMusicVolume(musicSlider.value);

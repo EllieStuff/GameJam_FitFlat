@@ -46,14 +46,17 @@ public class ExercisesClass : MonoBehaviour
             currentTime = timeExercise - (Time.time - initTime);
             if (currentTime <= 0)
             {
+                Building tmp = GameObject.Find("Building").GetComponent<Building>();
+                tmp.doingExercise = false;
+                tmp.exerciseID++;              
                 currentTime = 0;
                 isCompleted = true;
                 Player player = GameObject.Find("Player").GetComponent<Player>();
                 player.animator.SetBool("finish", true);
-                player.agent.enabled = true;
-                player.destination.transform.position += new Vector3(0, 3.2f, 0);
+                player.agent.isStopped = false;
+                player.destination.transform.position += new Vector3(0, 3f, 0);
                 player.SetDestination();
-                GameObject.Find("Building").GetComponent<Building>().exerciseID++;
+               
             }
         }
 

@@ -13,7 +13,7 @@ public class Building : MonoBehaviour
     [SerializeField] Player player;
     public float durationExercise;
     public UIManager uiManager;
-    [SerializeField] bool doingExercise;
+    public bool doingExercise;
 
     public int exerciseID = 0;
 
@@ -31,7 +31,7 @@ public class Building : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(player.transform.position, gameObject.transform.position) < 1.2f && !doingExercise)
+        if (Vector3.Distance(player.transform.position, player.destination.transform.position) < 1.2f && !doingExercise)
         {
             player.agent.isStopped = true;
             animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/Idle");
@@ -44,46 +44,17 @@ public class Building : MonoBehaviour
             uiManager.RefreshInfoPanel(flat[exerciseID].titleText, flat[exerciseID].explanationText);
 
             doingExercise = true;
+            Debug.Log(doingExercise);
         }
 
-
-        if (doingExercise)
+       
+        if (!doingExercise)
         {
-
-        }
-        else
-        {
-            camera.transform.DOLookAt(new Vector3(player.transform.position.x, player.transform.position.y+1, player.transform.position.z), 1f);
+            camera.transform.DOLookAt(new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z), 1f);
             camera.transform.DOMoveX(player.transform.position.x - 2, 1f);
             camera.transform.DOMoveY(player.transform.position.y + 1.5f, 1f);
         }
-    }
 
-    private void OnTriggerEnter (Collider other)
-    {
-        if(other.CompareTag("Player"))
-        {               
-            //camera.DOOrthoSize(3f, 2f);
-            //camera.transform.DOLookAt(new Vector3(other.transform.position.x-5, other.transform.position.y,other.transform.position.z), 2f);
-            ////Show info undo neightbour
-            //StartCoroutine(ExecuteAfterTime(5));
-
-            //Debug.Log(other.name);
-            //uiManager.infoPanel.SetActive(true);
-            //uiManager.RefreshInfoPanel(flat[exerciseID].titleText, flat[exerciseID].explanationText);
-            
-            //doingExercise = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            //exerciseID++;
-            // Debug.Log("out");
-        }
-      
     }
 
     float GetDurationExercise()
