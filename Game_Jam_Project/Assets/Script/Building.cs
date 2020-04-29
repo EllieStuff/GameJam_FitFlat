@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class Building : MonoBehaviour
 {
     public Constants.Difficulties difficulty;
     [SerializeField] ExercisesClass[] flat;
     [SerializeField] Animator animator;
     [SerializeField] RuntimeAnimatorController controller;
+    [SerializeField] Camera camera;
+    [SerializeField] GameObject player;
     public float durationExercise;
 
     int exerciseID = 0;
@@ -16,13 +18,14 @@ public class Building : MonoBehaviour
     void Start()
     {
         durationExercise = GetDurationExercise();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        camera.transform.DOLookAt(player.transform.position, 1f);
+        camera.transform.DOMoveX(player.transform.position.x-2, 1f);
+        camera.transform.DOMoveY(player.transform.position.y+1, 1f);
     }
 
     private void OnTriggerEnter(Collider other)
