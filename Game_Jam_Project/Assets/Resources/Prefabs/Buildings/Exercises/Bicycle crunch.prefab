@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6198288709864952457}
   - component: {fileID: 4814856139203555242}
   m_Layer: 0
-  m_Name: Bicycle Crunch
+  m_Name: Bicycle crunch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,10 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exerciseType: 17
-  explanation: {fileID: 0}
   controller: {fileID: 9100000, guid: e4c4f45333da78349b9a19960f95626f, type: 2}
+  titleText: Bicycle Crunch
+  explanationText: 'Hey neighbor! Get on the ground. While doing an abdominal touch
+    with your elbow, the opposite knee, while you stretch the leg on the same side. '
   timeExercise: 45
   isCompleted: 0
+  questAnswer: 0
+  startExercise: 0
   exerciseCombo: 0
   question: {fileID: 0}
   answers: []
+  answerId: 0

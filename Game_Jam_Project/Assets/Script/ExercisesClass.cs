@@ -9,8 +9,12 @@ using UnityEngine.Playables;
 public class ExercisesClass : MonoBehaviour
 {
     public Constants.ExerciseType exerciseType;
-    public TextMeshProUGUI explanation;
     public RuntimeAnimatorController controller;
+    public string titleText;
+    public string explanationText;
+
+    //private TextMeshProUGUI explanation;
+    //private TextMeshProUGUI title;
     public float timeExercise;
     private float currentTime;
     private float initTime;
@@ -26,6 +30,10 @@ public class ExercisesClass : MonoBehaviour
 
     private void Start()
     {
+        //GameObject infoPanel = GameObject.FindGameObjectWithTag("InfoPanel");
+        //explanation = infoPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        //title = infoPanel.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>();
+
         startExercise = isCompleted = false;
         currentTime = timeExercise;
         exerciseCombo = initTime = 0;

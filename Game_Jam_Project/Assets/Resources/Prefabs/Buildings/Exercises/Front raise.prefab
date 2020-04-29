@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8025229128289515662}
   - component: {fileID: 4736783904576435065}
   m_Layer: 0
-  m_Name: Front Raise
+  m_Name: Front raise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,10 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exerciseType: 18
-  explanation: {fileID: 0}
   controller: {fileID: 9100000, guid: dfaa38446dea0c54d92625e056f7b0db, type: 2}
+  titleText: Front Raise
+  explanationText: Hey neighbor! While you are standing, raise one arm frontally and
+    lower it again, then change arms.
   timeExercise: 0
   isCompleted: 0
+  questAnswer: 0
+  startExercise: 0
   exerciseCombo: 0
   question: {fileID: 0}
   answers: []
+  answerId: 0

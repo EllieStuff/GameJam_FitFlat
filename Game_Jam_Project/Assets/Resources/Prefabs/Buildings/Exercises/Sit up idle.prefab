@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2258145604820512439}
   - component: {fileID: 7270972554346734014}
   m_Layer: 0
-  m_Name: Sit Up Idle
+  m_Name: Sit up idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,10 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exerciseType: 0
-  explanation: {fileID: 0}
   controller: {fileID: 9100000, guid: de5a6049c1038d646a4dad8bdc4f20d3, type: 2}
+  titleText: Idle Sit Ups
+  explanationText: Hey neighbor! It's time to get down on the floor and sit down.
+    When you are on the ground go back up. Use your supporting hands.
   timeExercise: 60
   isCompleted: 0
+  questAnswer: 0
+  startExercise: 0
   exerciseCombo: 0
   question: {fileID: 0}
   answers: []
+  answerId: 0

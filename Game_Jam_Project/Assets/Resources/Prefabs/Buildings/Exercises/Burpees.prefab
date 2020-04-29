@@ -44,10 +44,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exerciseType: 15
-  explanation: {fileID: 0}
   controller: {fileID: 9100000, guid: 4402628e49c904c4899274e6c7dbaa48, type: 2}
+  titleText: Burpees
+  explanationText: Hey neighbor! This exercise is hard! Place your hands on the ground
+    facing the ground, stretch your legs, flex them again and jump up with your hands
+    up.
   timeExercise: 35
   isCompleted: 0
+  questAnswer: 0
+  startExercise: 0
   exerciseCombo: 0
   question: {fileID: 0}
   answers: []
+  answerId: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3337289641013155896}
   - component: {fileID: 2405509235043203793}
   m_Layer: 0
-  m_Name: Biceps Curl
+  m_Name: Biceps curl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,10 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exerciseType: 16
-  explanation: {fileID: 0}
   controller: {fileID: 9100000, guid: e2b681eb0729274428f618edb252ef8d, type: 2}
+  titleText: Biceps Curls
+  explanationText: Hey neighbor! Standing, holding a bottle of water or a bag with
+    your hand and your elbow close to your body, flex that arm and stretch it.
   timeExercise: 45
   isCompleted: 0
+  questAnswer: 0
+  startExercise: 0
   exerciseCombo: 0
   question: {fileID: 0}
   answers: []
+  answerId: 0

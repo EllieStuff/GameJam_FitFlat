@@ -44,10 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exerciseType: 11
-  explanation: {fileID: 0}
   controller: {fileID: 9100000, guid: b511382998fb0824f81bd157c6a1eb91, type: 2}
+  titleText: Stretching
+  explanationText: Hey neighbor! It is time to stretch a little. Take the opportunity
+    to do this stretch.
   timeExercise: 60
   isCompleted: 0
+  questAnswer: 0
+  startExercise: 0
   exerciseCombo: 0
   question: {fileID: 0}
   answers: []
+  answerId: 0

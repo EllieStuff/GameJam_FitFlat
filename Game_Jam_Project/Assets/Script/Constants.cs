@@ -24,7 +24,8 @@ public static class Constants
         BURPEES,
         BICEPS_CURL,
         BICYCLE_CRUNCH,
-        FRONT_RAISE
+        FRONT_RAISE, 
+        COUNT
     };   
 
     public enum Difficulties { EASY, MEDIUM, HARD };  

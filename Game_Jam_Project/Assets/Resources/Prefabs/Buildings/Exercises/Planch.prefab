@@ -44,10 +44,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exerciseType: 6
-  explanation: {fileID: 0}
   controller: {fileID: 9100000, guid: 4e5a465d6ef10744b987d52c946b6b0d, type: 2}
+  titleText: Planch
+  explanationText: Hey neighbor! Place your hands on the floor, stretch your legs,
+    and squeeze the glutes. Stay in this position. You can do it with knees in the
+    floor too.
   timeExercise: 45
   isCompleted: 0
+  questAnswer: 0
+  startExercise: 0
   exerciseCombo: 0
   question: {fileID: 0}
   answers: []
+  answerId: 0

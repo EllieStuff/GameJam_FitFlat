@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5614978784546399815}
   - component: {fileID: 5503889660834501553}
   m_Layer: 0
-  m_Name: Sit Up
+  m_Name: Sit up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,10 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exerciseType: 1
-  explanation: {fileID: 0}
   controller: {fileID: 9100000, guid: e2bd1bec29165a148909a240d897b89e, type: 2}
+  titleText: Sit Ups
+  explanationText: Hey neighbor! On the floor, face up, knees bent and feet on the
+    floor, do an abdominal until bringing your pectoral very close to the knees.
   timeExercise: 45
   isCompleted: 0
+  questAnswer: 0
+  startExercise: 0
   exerciseCombo: 0
   question: {fileID: 0}
   answers: []
+  answerId: 0

@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
     [SerializeField] NavMeshAgent agent;
     [SerializeField] GameObject destination;
     // Start is called before the first frame update
-   
+
+
     void Start()
     {
         puntuationBase = 2;

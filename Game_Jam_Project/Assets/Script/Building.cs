@@ -6,18 +6,26 @@ public class Building : MonoBehaviour
 {
     public Constants.Difficulties difficulty;
     [SerializeField] ExercisesClass[] flat;
+    public ExercisesClass[] exercises = new ExercisesClass[(int)Constants.ExerciseType.COUNT];
     [SerializeField] Animator animator;
     [SerializeField] RuntimeAnimatorController controller;
     [SerializeField] Camera camera;
     [SerializeField] GameObject player;
     public float durationExercise;
+    public UIManager uiManager;
     [SerializeField] bool doingExercise;
 
-    int exerciseID = 0;
+    private int exerciseID = 0;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        
+        //infoPanelExplanation = infoPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        //infoPanelTitle = infoPanel.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>();
+        //infoPanel.SetActive(false);
+
         durationExercise = GetDurationExercise();
     }
 
@@ -41,7 +49,9 @@ public class Building : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            //Show info
+            Debug.Log("in");
+            uiManager.infoPanel.SetActive(true);
+            uiManager.RefreshInfoPanel(flat[exerciseID].titleText, flat[exerciseID].explanationText);
 
             flat[exerciseID].StartExercice(animator);
             camera.DOOrthoSize(3f, 1f);
@@ -55,6 +65,7 @@ public class Building : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             exerciseID++;
+
         }
     }
 

@@ -44,10 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exerciseType: 14
-  explanation: {fileID: 0}
   controller: {fileID: 9100000, guid: b9e8d0cd0b80afb46aa10cd153708fa6, type: 2}
+  titleText: Air Squat
+  explanationText: Hey neighbor! Let's do a squat. Flex your legs, glutes back and
+    flex your arms. When you return, stretch your legs and arms.
   timeExercise: 60
   isCompleted: 0
+  questAnswer: 0
+  startExercise: 0
   exerciseCombo: 0
   question: {fileID: 0}
   answers: []
+  answerId: 0

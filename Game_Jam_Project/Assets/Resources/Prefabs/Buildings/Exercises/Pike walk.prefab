@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7695976302527957903}
   - component: {fileID: 6484269395933183093}
   m_Layer: 0
-  m_Name: Pike Walk
+  m_Name: Pike walk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,10 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exerciseType: 9
-  explanation: {fileID: 0}
   controller: {fileID: 9100000, guid: 31e1cd13e2994bc4ab56580e92301b05, type: 2}
+  titleText: Pike Walk
+  explanationText: Hey neighbor! Try flexing your back and legs, until you put your
+    hands on the floor. Walk only with your hands forward and come back.
   timeExercise: 60
   isCompleted: 0
+  questAnswer: 0
+  startExercise: 0
   exerciseCombo: 0
   question: {fileID: 0}
   answers: []
+  answerId: 0

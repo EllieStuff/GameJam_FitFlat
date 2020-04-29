@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6264159529130429029}
   - component: {fileID: 2066965013926339213}
   m_Layer: 0
-  m_Name: Jumping Jacks
+  m_Name: Jumping jacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,10 +44,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exerciseType: 12
-  explanation: {fileID: 0}
   controller: {fileID: 9100000, guid: 914c224b61d97a54b9c96593b56a3dbf, type: 2}
+  titleText: Jumping Jacks
+  explanationText: Hey neighbor! We are going to jump while you open arms and legs.
   timeExercise: 60
   isCompleted: 0
+  questAnswer: 0
+  startExercise: 0
   exerciseCombo: 0
   question: {fileID: 0}
   answers: []
+  answerId: 0
