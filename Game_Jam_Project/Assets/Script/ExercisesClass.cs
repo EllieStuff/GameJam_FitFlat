@@ -27,8 +27,8 @@ public class ExercisesClass : MonoBehaviour
     public TextMeshProUGUI timer;
 
     [Header("Question")]
-    public TextMeshProUGUI question;
-    public TextMeshProUGUI[] answers;
+    public string question;
+    public string[] answer = new string [3];
 
     public void Init()
     {
