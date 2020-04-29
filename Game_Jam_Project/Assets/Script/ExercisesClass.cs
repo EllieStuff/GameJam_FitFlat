@@ -23,12 +23,14 @@ public class ExercisesClass : MonoBehaviour
     [SerializeField] bool startExercise;
     [SerializeField] float exerciseCombo;
 
+    private GameObject timerObj;
+    public TextMeshProUGUI timer;
+
     [Header("Question")]
     public TextMeshProUGUI question;
     public TextMeshProUGUI[] answers;
-    public int answerId;
 
-    private void Start()
+    public void Init()
     {
         //GameObject infoPanel = GameObject.FindGameObjectWithTag("InfoPanel");
         //explanation = infoPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
@@ -37,6 +39,9 @@ public class ExercisesClass : MonoBehaviour
         startExercise = isCompleted = false;
         currentTime = timeExercise;
         exerciseCombo = initTime = 0;
+
+        timer = GameObject.Find("TimerText").GetComponent<TextMeshProUGUI>();
+        timerObj = GameObject.Find("Timer");
     }
 
     private void Update()
@@ -44,6 +49,7 @@ public class ExercisesClass : MonoBehaviour
         if (startExercise&&!isCompleted)
         {
             currentTime = timeExercise - (Time.time - initTime);
+            timer.SetText(((int)currentTime).ToString());
             if (currentTime <= 0)
             {
                 Building tmp = GameObject.Find("Building").GetComponent<Building>();
@@ -56,7 +62,7 @@ public class ExercisesClass : MonoBehaviour
                 player.agent.isStopped = false;
                 player.destination.transform.position += new Vector3(0, 3f, 0);
                 player.SetDestination();
-               
+                StartCoroutine(FuncTime(1));
             }
         }
 
@@ -70,6 +76,7 @@ public class ExercisesClass : MonoBehaviour
     public void StartExercice(Animator animator)
     {
         startExercise = true;
+        timerObj.gameObject.SetActive(true);
         animator.runtimeAnimatorController = controller;
         GameObject.Find("Player").GetComponent<Animator>().runtimeAnimatorController = controller;
         initTime = Time.time;
@@ -80,5 +87,11 @@ public class ExercisesClass : MonoBehaviour
         return currentTime;
     }
 
+    IEnumerator FuncTime(int time)
+    {
+        yield return new WaitForSeconds(time);
+        timerObj.gameObject.SetActive(false);
+    }
 
+    
 }

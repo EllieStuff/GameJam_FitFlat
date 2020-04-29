@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Cinemachine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class Player : MonoBehaviour
     public Animator animator;
     public  NavMeshAgent agent;
     public GameObject destination;
+    [SerializeField] TextMeshProUGUI score;
+    [SerializeField] TextMeshProUGUI combo;
+
     // Start is called before the first frame update
 
 
@@ -27,7 +31,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        score.text = puntuation.ToString();
+        combo.text = "x" + totalCombo.ToString();
     }
 
     public void AddCombo(float comb)

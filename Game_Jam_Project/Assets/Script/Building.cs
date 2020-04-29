@@ -160,6 +160,12 @@ public class Building : MonoBehaviour
                 GameObject.Find("Vecino" + i.ToString()).GetComponent<Animator>().runtimeAnimatorController = flat[i].controller;
             }
         }
+        for (int i = 0; i < flat.Length; i++)
+        {
+            flat[i].Init();
+        }
+
+        GameObject.Find("Timer").SetActive(false);
     }
 
     public void StartExercice()
@@ -170,4 +176,6 @@ public class Building : MonoBehaviour
         camera.transform.DOMoveY(player.transform.position.y + 2f, 1f);
         camera.DOOrthoSize(2f, 1f);
     }
+
+
 }
