@@ -72,6 +72,5 @@ public class ExercisesClass : MonoBehaviour
         return currentTime;
     }
 
- 
 
 }

@@ -11,8 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField] private int currentFlat;
     [SerializeField] private int puntuationBase;
     [SerializeField] Animator animator;
-    [SerializeField] NavMeshAgent agent;
-    [SerializeField] GameObject destination;
+    public  NavMeshAgent agent;
+    public GameObject destination;
     // Start is called before the first frame update
 
 
@@ -27,11 +27,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(destination.transform.position, gameObject.transform.position) < 0.2f)
-        {
-            agent.isStopped = true;
-            animator.enabled = false;
-        }
+       
     }
 
     public void AddCombo(float comb)
