@@ -111,19 +111,19 @@ public class Building : MonoBehaviour
             //GameObject.Find("Floor13").SetActive(false);
 
             flat = new ExercisesClass[13];
-            flat[0] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Sit up idle").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[1] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Quick steps").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[2] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Circle crunches").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[0] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Jumping Jacks").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[1] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Pike walk").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[2] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Planch").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
             flat[3] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Breath sitting idle").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[4] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Push ups").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[5] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Planch").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[6] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Cross jumps").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[7] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Pike walk").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[8] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Stretching 1").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[9] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Push ups").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[10] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Planch").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[11] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Cross jumps").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[12] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Pike walk").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[4] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Air Squad").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[5] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Pike walk").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[6] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Air Squd Bent Arms").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[7] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Breath idle").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[8] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Burpees").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[9] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Biceps curl").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[10] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Cross jumps").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[11] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Breath sitting idle").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[12] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Stretching 2").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
 
             //VECINOS
             for (int i = 0; i < flat.Length; i++)
@@ -137,19 +137,19 @@ public class Building : MonoBehaviour
            
 
             flat = new ExercisesClass[15];
-            flat[0] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Sit up idle").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[1] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Quick steps").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[2] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Circle crunches").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[0] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Quick steps").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[1] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Air Squad").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[2] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Bicycle crunch").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
             flat[3] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Breath sitting idle").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[4] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Push ups").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[5] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Planch").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[6] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Cross jumps").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[7] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Pike walk").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[8] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Stretching 1").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[9] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Push ups").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[10] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Planch").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[11] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Cross jumps").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[12] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Pike walk").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[4] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Planch").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[5] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Pike walk").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[6] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Front raise").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[7] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Breath idle").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[8] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Push ups").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[9] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Burpees").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[10] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Sit up").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[11] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Biceps curl").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[12] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Breath sitting idle").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
             flat[13] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Stretching 1").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
             flat[14] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Stretching 2").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
 
