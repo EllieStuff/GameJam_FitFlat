@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6339600509395096219}
   - component: {fileID: 590326435308178725}
   m_Layer: 0
-  m_Name: Breath Idle
+  m_Name: Breath idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,10 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exerciseType: 4
-  explanation: {fileID: 0}
   controller: {fileID: 9100000, guid: 0585ea0438dbcf14a8d4903a5258c7f9, type: 2}
+  titleText: Breath
+  explanationText: Hey neighbor! While you are standing, take a deep breath and let
+    it go.
   timeExercise: 75
   isCompleted: 0
+  questAnswer: 0
+  startExercise: 0
   exerciseCombo: 0
   question: {fileID: 0}
   answers: []
+  answerId: 0

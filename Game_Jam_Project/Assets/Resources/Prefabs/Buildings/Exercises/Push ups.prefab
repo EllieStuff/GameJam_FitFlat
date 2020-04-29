@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6300494379634924621}
   - component: {fileID: 7438501531446385199}
   m_Layer: 0
-  m_Name: Push Ups
+  m_Name: Push ups
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,10 +44,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exerciseType: 7
-  explanation: {fileID: 0}
   controller: {fileID: 9100000, guid: 32f29d933d7587844848c0297a5aabb4, type: 2}
+  titleText: Push Ups
+  explanationText: Hey neighbor! Place your hands on the floor, stretch your legs,
+    and squeeze the glutes. Lower the pectoral until the arms are flexed at 90 degrees,
+    raise.
   timeExercise: 45
   isCompleted: 0
+  questAnswer: 0
+  startExercise: 0
   exerciseCombo: 0
   question: {fileID: 0}
   answers: []
+  answerId: 0

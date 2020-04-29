@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5657185337992898422}
   - component: {fileID: 8357366341870993743}
   m_Layer: 0
-  m_Name: Breath Sitting Idle
+  m_Name: Breath sitting idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,10 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exerciseType: 5
-  explanation: {fileID: 0}
   controller: {fileID: 9100000, guid: c0d604c3115e318428df0585f016f309, type: 2}
+  titleText: Sit and Breath
+  explanationText: Hey neighbor! Sit in a chair and relax. Take a deep breath and
+    let it go.
   timeExercise: 60
   isCompleted: 0
+  questAnswer: 0
+  startExercise: 0
   exerciseCombo: 0
   question: {fileID: 0}
   answers: []
+  answerId: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3739718685666239150}
   - component: {fileID: 5018950356133072992}
   m_Layer: 0
-  m_Name: Cross Jumps
+  m_Name: Cross jumps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,10 +44,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exerciseType: 8
-  explanation: {fileID: 0}
   controller: {fileID: 9100000, guid: ddfc1b2bb9027dc43b6be3ae23b79a1f, type: 2}
+  titleText: Cross Jumps
+  explanationText: 
   timeExercise: 60
   isCompleted: 0
+  questAnswer: 0
+  startExercise: 0
   exerciseCombo: 0
   question: {fileID: 0}
   answers: []
+  answerId: 0
