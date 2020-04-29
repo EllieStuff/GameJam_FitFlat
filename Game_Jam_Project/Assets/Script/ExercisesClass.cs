@@ -48,7 +48,12 @@ public class ExercisesClass : MonoBehaviour
             {
                 currentTime = 0;
                 isCompleted = true;
-                GameObject.Find("Player").GetComponent<Animator>().SetBool("finish", true);
+                Player player = GameObject.Find("Player").GetComponent<Player>();
+                player.animator.SetBool("finish", true);
+                player.agent.enabled = true;
+                player.destination.transform.position += new Vector3(0, 3.2f, 0);
+                player.SetDestination();
+                GameObject.Find("Building").GetComponent<Building>().exerciseID++;
             }
         }
 
@@ -63,8 +68,8 @@ public class ExercisesClass : MonoBehaviour
     {
         startExercise = true;
         animator.runtimeAnimatorController = controller;
+        GameObject.Find("Player").GetComponent<Animator>().runtimeAnimatorController = controller;
         initTime = Time.time;
-
     }
 
     public float GetCurrentTime()

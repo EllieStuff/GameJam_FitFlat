@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float totalCombo;
     [SerializeField] private int currentFlat;
     [SerializeField] private int puntuationBase;
-    [SerializeField] Animator animator;
+    public Animator animator;
     public  NavMeshAgent agent;
     public GameObject destination;
     // Start is called before the first frame update
@@ -39,7 +39,6 @@ public class Player : MonoBehaviour
     {
         agent.SetDestination(destination.transform.position);
         animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/Walk");
-        // animator.Play(0);
     }
 
     IEnumerator IncreasePuntuation()
