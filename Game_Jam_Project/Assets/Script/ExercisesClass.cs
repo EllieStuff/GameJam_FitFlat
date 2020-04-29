@@ -15,12 +15,14 @@ public class ExercisesClass : MonoBehaviour
     private float currentTime;
     private float initTime;
     [SerializeField] bool isCompleted;
+    [SerializeField] bool questAnswer;
     [SerializeField] bool startExercise;
     [SerializeField] float exerciseCombo;
 
     [Header("Question")]
     public TextMeshProUGUI question;
     public TextMeshProUGUI[] answers;
+    public int answerId;
 
     private void Start()
     {
@@ -36,14 +38,16 @@ public class ExercisesClass : MonoBehaviour
             currentTime = timeExercise - (Time.time - initTime);
             if (currentTime <= 0)
             {
+                currentTime = 0;
                 isCompleted = true;
+                
             }
         }
 
-        if(isCompleted)
+        if(questAnswer)
         {
-            //Show Quest and setCombo
-
+            GameObject.Find("Player").GetComponent<Player>().AddCombo(exerciseCombo);
+            questAnswer = false;
         }
     }
 
@@ -58,4 +62,7 @@ public class ExercisesClass : MonoBehaviour
     {
         return currentTime;
     }
+
+ 
+
 }
