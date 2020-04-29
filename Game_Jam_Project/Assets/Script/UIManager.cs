@@ -36,37 +36,8 @@ public class UIManager : MonoBehaviour
 
     void SelectLevel(Constants.Difficulties level)
     {
-        if (level == Constants.Difficulties.EASY)
-        {      
-            building.difficulty = level;
-            GameObject.Find("Floor15").SetActive(false);
-            GameObject.Find("Floor14").SetActive(false);
-            GameObject.Find("Floor13").SetActive(false);
-            GameObject.Find("Floor12").SetActive(false);
-            GameObject.Find("Floor11").SetActive(false);
-            GameObject.Find("Floor10").SetActive(false);
-
-        }
-        else if(level == Constants.Difficulties.MEDIUM)
-        {
-            building.difficulty = level;
-            GameObject.Find("Floor15").SetActive(false);
-            GameObject.Find("Floor14").SetActive(false);
-            GameObject.Find("Floor13").SetActive(false);
-            GameObject.Find("Floor12").SetActive(false);
-        }
-        else
-        {
-            building.difficulty = level;
-        }
-
-        GameObject.Find("Building").GetComponent<Building>().difficulty = level;
-        StartCoroutine(StartMovingPlayer());
-    }
-
-    IEnumerator StartMovingPlayer()
-    {
-        yield return new WaitForSeconds(2);
+        building.SelectLevel(level);
+        new WaitForSeconds(2);
         player.SetDestination();
     }
 }

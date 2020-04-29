@@ -40,7 +40,7 @@ public class ExercisesClass : MonoBehaviour
             {
                 currentTime = 0;
                 isCompleted = true;
-                
+                GameObject.Find("Player").GetComponent<Animator>().SetBool("finish", true);
             }
         }
 

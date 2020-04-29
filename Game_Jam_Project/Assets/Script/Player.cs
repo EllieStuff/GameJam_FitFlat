@@ -26,7 +26,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Vector3.Distance(destination.transform.position, gameObject.transform.position) < 0.2f)
+        {
+            agent.isStopped = true;
+            animator.enabled = false;
+        }
     }
 
     public void AddCombo(float comb)

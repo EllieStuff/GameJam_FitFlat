@@ -30,11 +30,16 @@ public class OpenDoor : MonoBehaviour
             lerp = false;
         }
     }
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
             lerp = true;
         }
+    }
+
+    IEnumerator Open()
+    {
+        yield return null;
     }
 }
