@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Button woman_button;
     [SerializeField] Button[] difficult_buttons;
     [SerializeField] Building building;
+    [SerializeField] Player player;
 
     // Start is called before the first frame update
     void Start()
@@ -29,16 +30,16 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            GameObject.Find("SM_Chr_Developer_Male_01").SetActive(true);
+            GameObject.Find("SM_Chr_Developer_Male_01").SetActive(false);
         }
     }
 
     void SelectLevel(Constants.Difficulties level)
     {
-
         if (level == Constants.Difficulties.EASY)
         {      
             building.difficulty = level;
+
         }
         else if(level == Constants.Difficulties.MEDIUM)
         {
@@ -50,5 +51,12 @@ public class UIManager : MonoBehaviour
         }
 
         GameObject.Find("Building").GetComponent<Building>().difficulty = level;
+        StartCoroutine(StartMovingPlayer());
+    }
+
+    IEnumerator StartMovingPlayer()
+    {
+        yield return new WaitForSeconds(2);
+        player.SetDestination();
     }
 }

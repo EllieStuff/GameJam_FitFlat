@@ -10,18 +10,17 @@ public class Player : MonoBehaviour
     [SerializeField] private float totalCombo;
     [SerializeField] private int currentFlat;
     [SerializeField] private int puntuationBase;
+    [SerializeField] Animator animator;
     [SerializeField] NavMeshAgent agent;
     [SerializeField] GameObject destination;
     // Start is called before the first frame update
    
     void Start()
     {
-       
         puntuationBase = 2;
         puntuation = 0; //Init
         totalCombo = 0;
         StartCoroutine("IncreasePuntuation");
-        // agent.SetDestination(destination.transform.position);
     }
 
     // Update is called once per frame
@@ -33,6 +32,13 @@ public class Player : MonoBehaviour
     public void AddCombo(float comb)
     {
         totalCombo += comb;
+    }
+
+    public void SetDestination()
+    {
+        agent.SetDestination(destination.transform.position);
+        animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/Walk");
+        // animator.Play(0);
     }
 
     IEnumerator IncreasePuntuation()
