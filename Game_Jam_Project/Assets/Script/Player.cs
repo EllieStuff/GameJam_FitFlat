@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Cinemachine;
 
 public class Player : MonoBehaviour
 {
@@ -15,11 +16,12 @@ public class Player : MonoBehaviour
    
     void Start()
     {
+       
         puntuationBase = 2;
         puntuation = 0; //Init
         totalCombo = 0;
         StartCoroutine("IncreasePuntuation");
-        agent.SetDestination(destination.transform.position);
+        // agent.SetDestination(destination.transform.position);
     }
 
     // Update is called once per frame

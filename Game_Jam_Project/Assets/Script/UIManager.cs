@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] Button man_button;
     [SerializeField] Button woman_button;
     [SerializeField] Button[] difficult_buttons;
+    [SerializeField] Building building;
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +25,11 @@ public class UIManager : MonoBehaviour
     {
         if(gen == Constants.Genere.MAN)
         {
-            GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Characters/MAN"), new Vector3(0,0,0), Quaternion.Euler(0, -90, 0)).name = "Player";
+            GameObject.Find("SM_Chr_Developer_Female_02").SetActive(false);
         }
         else
         {
-            GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Characters/WOMAN"), new Vector3(0, 0, 0), Quaternion.Euler(0, -90, 0)).name = "Player";
+            GameObject.Find("SM_Chr_Developer_Male_01").SetActive(true);
         }
     }
 
@@ -36,16 +37,16 @@ public class UIManager : MonoBehaviour
     {
 
         if (level == Constants.Difficulties.EASY)
-        {
-            GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Building Easy"), new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0)).name = "Building";
+        {      
+            building.difficulty = level;
         }
         else if(level == Constants.Difficulties.MEDIUM)
         {
-            GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Building Medium"), new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0)).name = "Building";
+            building.difficulty = level;
         }
         else
         {
-            GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Building Hard"), new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0)).name = "Building";
+            building.difficulty = level;
         }
 
         GameObject.Find("Building").GetComponent<Building>().difficulty = level;
