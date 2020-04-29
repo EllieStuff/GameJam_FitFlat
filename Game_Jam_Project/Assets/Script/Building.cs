@@ -10,7 +10,7 @@ public class Building : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] RuntimeAnimatorController controller;
     [SerializeField] Camera camera;
-    [SerializeField] GameObject player;
+    [SerializeField] Player player;
     public float durationExercise;
     public UIManager uiManager;
     [SerializeField] bool doingExercise;
@@ -44,7 +44,7 @@ public class Building : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter (Collider other)
     {
         if(other.CompareTag("Player"))
         {               
@@ -53,11 +53,11 @@ public class Building : MonoBehaviour
             //Show info undo neightbour
             StartCoroutine(ExecuteAfterTime(5));
 
-            Debug.Log("in");
+            Debug.Log(other.name);
             uiManager.infoPanel.SetActive(true);
             uiManager.RefreshInfoPanel(flat[exerciseID].titleText, flat[exerciseID].explanationText);
-
-            flat[exerciseID].StartExercice(animator);
+            StartCoroutine(NeatDestination());
+            
             doingExercise = true;
         }
     }
@@ -67,8 +67,9 @@ public class Building : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //exerciseID++;
-
+            Debug.Log("out");
         }
+      
     }
 
     float GetDurationExercise()
@@ -183,5 +184,22 @@ public class Building : MonoBehaviour
         camera.transform.DOLookAt(new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z), 2f);
         camera.transform.DOMoveY(player.transform.position.y + 2f, 1f);
         camera.DOOrthoSize(2f, 1f);
+    }
+
+    IEnumerator NeatDestination()
+    {
+        bool aux = false;
+        do
+        {
+            if (Vector3.Distance(player.transform.position, gameObject.transform.position) < 0.2f)
+            {
+                player.agent.isStopped = true;
+                animator.enabled = false;
+                aux = true;
+                flat[exerciseID].StartExercice(animator);
+            }
+            yield return null;
+        } while (aux);
+
     }
 }
