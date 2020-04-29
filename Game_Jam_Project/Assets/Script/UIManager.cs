@@ -38,7 +38,8 @@ public class UIManager : MonoBehaviour
     {
         if(gen == Constants.Genere.MAN)
         {
-            GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Characters/MAN"), new Vector3(0,0,0), Quaternion.Euler(0, -90, 0)).name = "Player";
+            GameObject.Find("SM_Chr_Developer_Female_02").SetActive(false);
+            //GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Characters/MAN"), new Vector3(0,0,0), Quaternion.Euler(0, -90, 0)).name = "Player";
         }
         else
         {

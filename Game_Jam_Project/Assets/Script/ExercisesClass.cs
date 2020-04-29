@@ -64,6 +64,7 @@ public class ExercisesClass : MonoBehaviour
         startExercise = true;
         animator.runtimeAnimatorController = controller;
         initTime = Time.time;
+
     }
 
     public float GetCurrentTime()

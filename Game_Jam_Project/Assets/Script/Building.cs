@@ -66,7 +66,7 @@ public class Building : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            exerciseID++;
+            //exerciseID++;
 
         }
     }
@@ -85,8 +85,17 @@ public class Building : MonoBehaviour
     public void SelectLevel(Constants.Difficulties level)
     {
         difficulty = level;
-        if(level == Constants.Difficulties.EASY)
+
+        if (level == Constants.Difficulties.EASY)
         {
+            // Desactivem les plantes que no son necessaries
+            GameObject.Find("Floor15").SetActive(false);
+            GameObject.Find("Floor14").SetActive(false);
+            GameObject.Find("Floor13").SetActive(false);
+            GameObject.Find("Floor12").SetActive(false);
+            GameObject.Find("Floor11").SetActive(false);
+            GameObject.Find("Floor10").SetActive(false);
+
             flat = new ExercisesClass[9];
             flat[0] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Sit up").GetComponent<ExercisesClass>();
             //flat[0] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Quick steps").GetComponent<ExercisesClass>();
@@ -98,13 +107,23 @@ public class Building : MonoBehaviour
             flat[6] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Cross jumps").GetComponent<ExercisesClass>();
             flat[7] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Pike walk").GetComponent<ExercisesClass>();
             flat[8] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Stretching 1").GetComponent<ExercisesClass>();
+
+
+            //VECINOS
+            for (int i = 0; i < flat.Length; i++)
+            {
+                GameObject.Find("Vecino"+i.ToString()).GetComponent<Animator>().runtimeAnimatorController = flat[i].controller;
+            }
+           
+
         }
         else if(level == Constants.Difficulties.MEDIUM)
         {
+
             // Desactivem les plantes que no son necessaries
             GameObject.Find("Floor15").SetActive(false);
             GameObject.Find("Floor14").SetActive(false);
-            GameObject.Find("Floor13").SetActive(false);
+            //GameObject.Find("Floor13").SetActive(false);
 
             flat = new ExercisesClass[13];
             flat[0] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Sit up idle").GetComponent<ExercisesClass>();
@@ -120,16 +139,17 @@ public class Building : MonoBehaviour
             flat[10] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Planch").GetComponent<ExercisesClass>();
             flat[11] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Cross jumps").GetComponent<ExercisesClass>();
             flat[12] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Pike walk").GetComponent<ExercisesClass>();
+
+            //VECINOS
+            for (int i = 0; i < flat.Length; i++)
+            {
+                GameObject.Find("Vecino" + i.ToString()).GetComponent<Animator>().runtimeAnimatorController = flat[i].controller;
+            }
+
         }
         else
         {
-            // Desactivem les plantes que no son necessaries
-            GameObject.Find("Floor15").SetActive(false);
-            GameObject.Find("Floor14").SetActive(false);
-            GameObject.Find("Floor13").SetActive(false);
-            GameObject.Find("Floor12").SetActive(false);
-            GameObject.Find("Floor11").SetActive(false);
-            GameObject.Find("Floor10").SetActive(false);
+           
 
             flat = new ExercisesClass[15];
             flat[0] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Sit up idle").GetComponent<ExercisesClass>();
@@ -147,6 +167,12 @@ public class Building : MonoBehaviour
             flat[12] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Pike walk").GetComponent<ExercisesClass>();
             flat[13] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Stretching 1").GetComponent<ExercisesClass>();
             flat[14] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Stretching 2").GetComponent<ExercisesClass>();
+
+            //VECINOS
+            for (int i = 0; i < flat.Length; i++)
+            {
+                GameObject.Find("Vecino" + i.ToString()).GetComponent<Animator>().runtimeAnimatorController = flat[i].controller;
+            }
         }
     }
 
