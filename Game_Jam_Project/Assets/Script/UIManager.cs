@@ -64,7 +64,6 @@ public class UIManager : MonoBehaviour
     {
         infoPanelExplanation.text = explanation;
         infoPanelTitle.text = title;
-        infoPanel.SetActive(true);
 
     }
 

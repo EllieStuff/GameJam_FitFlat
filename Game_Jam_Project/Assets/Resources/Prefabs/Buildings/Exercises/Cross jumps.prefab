@@ -46,7 +46,8 @@ MonoBehaviour:
   exerciseType: 8
   controller: {fileID: 9100000, guid: ddfc1b2bb9027dc43b6be3ae23b79a1f, type: 2}
   titleText: Cross Jumps
-  explanationText: 
+  explanationText: "Hey neightbor! Let\u2019s do a square with little jumps. Can you
+    try it?"
   timeExercise: 60
   isCompleted: 0
   questAnswer: 0
