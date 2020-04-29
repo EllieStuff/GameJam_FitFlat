@@ -37,7 +37,8 @@ public class Building : MonoBehaviour
             animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/Idle");
 
             camera.DOOrthoSize(3f, 2f);
-            camera.transform.DOLookAt(new Vector3(player.transform.position.x - 5, player.transform.position.y, player.transform.position.z), 2f);
+            GameObject vecinoTmp = GameObject.Find("Vecino" + exerciseID.ToString());
+            camera.transform.DOLookAt(new Vector3(vecinoTmp.transform.position.x, vecinoTmp.transform.position.y-1, vecinoTmp.transform.position.z), 2f);
 
             //Show info undo neightbour
             uiManager.infoPanel.SetActive(true);
