@@ -35,11 +35,10 @@ public class Building : MonoBehaviour
         if (doingExercise)
         {
 
-            camera.transform.DOMoveX(player.transform.position.x - Mathf.Sin(Time.time), 1f);
         }
         else
         {
-            camera.transform.DOLookAt(player.transform.position, 1f);
+            camera.transform.DOLookAt(new Vector3(player.transform.position.x, player.transform.position.y+1, player.transform.position.z), 1f);
             camera.transform.DOMoveX(player.transform.position.x - 2, 1f);
             camera.transform.DOMoveY(player.transform.position.y + 1.5f, 1f);
         }
@@ -48,14 +47,17 @@ public class Building : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
+        {               
+            camera.DOOrthoSize(3f, 2f);
+            camera.transform.DOLookAt(new Vector3(other.transform.position.x-5, other.transform.position.y,other.transform.position.z), 2f);
+            //Show info undo neightbour
+            StartCoroutine(ExecuteAfterTime(5));
         {
             Debug.Log("in");
             uiManager.infoPanel.SetActive(true);
             uiManager.RefreshInfoPanel(flat[exerciseID].titleText, flat[exerciseID].explanationText);
 
             flat[exerciseID].StartExercice(animator);
-            camera.DOOrthoSize(3f, 1f);
-            camera.transform.DOLookAt(other.transform.position, 1f);
             doingExercise = true;
         }
     }
@@ -146,5 +148,14 @@ public class Building : MonoBehaviour
             flat[13] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Stretching 1").GetComponent<ExercisesClass>();
             flat[14] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Stretching 2").GetComponent<ExercisesClass>();
         }
+    }
+
+    IEnumerator ExecuteAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        camera.transform.DOLookAt(new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z), 2f);
+        camera.transform.DOMoveY(player.transform.position.y + 2f, 1f);
+        camera.DOOrthoSize(2f, 1f);
     }
 }
