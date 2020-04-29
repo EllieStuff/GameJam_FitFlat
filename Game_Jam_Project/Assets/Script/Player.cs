@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float totalCombo;
     [SerializeField] private int currentFlat;
     [SerializeField] private int puntuationBase;
+    [SerializeField] NavMeshAgent agent;
+    [SerializeField] GameObject destination;
     // Start is called before the first frame update
    
     void Start()
@@ -16,6 +19,7 @@ public class Player : MonoBehaviour
         puntuation = 0; //Init
         totalCombo = 0;
         StartCoroutine("IncreasePuntuation");
+        agent.SetDestination(destination.transform.position);
     }
 
     // Update is called once per frame
