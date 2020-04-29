@@ -8,7 +8,6 @@ public class Building : MonoBehaviour
     [SerializeField] ExercisesClass[] flat;
     [SerializeField] Animator animator;
     [SerializeField] RuntimeAnimatorController controller;
-    public int flatPuntuation;
     public float durationExercise;
 
     int exerciseID = 0;

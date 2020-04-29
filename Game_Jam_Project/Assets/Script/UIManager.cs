@@ -37,15 +37,15 @@ public class UIManager : MonoBehaviour
 
         if (level == Constants.Difficulties.EASY)
         {
-            GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Building Easy"), new Vector3(0, 0, 0), Quaternion.Euler(0, -90, 0)).name = "Building";
+            GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Building Easy"), new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0)).name = "Building";
         }
         else if(level == Constants.Difficulties.MEDIUM)
         {
-            GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Building Medium"), new Vector3(0, 0, 0), Quaternion.Euler(0, -90, 0)).name = "Building";
+            GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Building Medium"), new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0)).name = "Building";
         }
         else
         {
-            GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Building Hard"), new Vector3(0, 0, 0), Quaternion.Euler(0, -90, 0)).name = "Building";
+            GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Building Hard"), new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0)).name = "Building";
         }
 
         GameObject.Find("Building").GetComponent<Building>().difficulty = level;

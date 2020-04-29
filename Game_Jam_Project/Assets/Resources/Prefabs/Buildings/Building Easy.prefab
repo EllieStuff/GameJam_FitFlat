@@ -53,8 +53,8 @@ MonoBehaviour:
   - {fileID: 7438501531446385199, guid: 6f8cd8a4d0ef82149af2b3a85a728c71, type: 3}
   - {fileID: 4736820575381247598, guid: b4d58ec1c2c8a9a4c95bf9d6b3a28149, type: 3}
   - {fileID: 5018950356133072992, guid: e209f528e40143e4da0730c55bac98b8, type: 3}
-  - {fileID: 6484269395933183093, guid: 609f86d26c36fc5459c2e88eaa8cdec1, type: 3}
-  - {fileID: 92885747120512905, guid: 535a7ff8b91ee664596f163b4908cddc, type: 3}
+  - {fileID: 6484269395933183093, guid: b28eef81eeae7ae42bfd5b3a4724c110, type: 3}
+  - {fileID: 92885747120512905, guid: 9b7f38ad70d906f44840e261fe52c9ba, type: 3}
   animator: {fileID: 0}
   controller: {fileID: 0}
   flatPuntuation: 0
