@@ -11,6 +11,7 @@ public class Building : MonoBehaviour
     [SerializeField] Camera camera;
     [SerializeField] GameObject player;
     public float durationExercise;
+    [SerializeField] bool doingExercise;
 
     int exerciseID = 0;
 
@@ -23,16 +24,29 @@ public class Building : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        camera.transform.DOLookAt(player.transform.position, 1f);
-        camera.transform.DOMoveX(player.transform.position.x-2, 1f);
-        camera.transform.DOMoveY(player.transform.position.y+1, 1f);
+        if (doingExercise)
+        {
+
+            camera.transform.DOMoveX(player.transform.position.x - Mathf.Sin(Time.time), 1f);
+        }
+        else
+        {
+            camera.transform.DOLookAt(player.transform.position, 1f);
+            camera.transform.DOMoveX(player.transform.position.x - 2, 1f);
+            camera.transform.DOMoveY(player.transform.position.y + 1.5f, 1f);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
+            //Show info
+
             flat[exerciseID].StartExercice(animator);
+            camera.DOOrthoSize(3f, 1f);
+            camera.transform.DOLookAt(other.transform.position, 1f);
+            doingExercise = true;
         }
     }
 
