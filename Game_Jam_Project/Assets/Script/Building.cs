@@ -52,7 +52,7 @@ public class Building : MonoBehaviour
             camera.transform.DOLookAt(new Vector3(other.transform.position.x-5, other.transform.position.y,other.transform.position.z), 2f);
             //Show info undo neightbour
             StartCoroutine(ExecuteAfterTime(5));
-        {
+
             Debug.Log("in");
             uiManager.infoPanel.SetActive(true);
             uiManager.RefreshInfoPanel(flat[exerciseID].titleText, flat[exerciseID].explanationText);
