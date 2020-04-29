@@ -86,7 +86,8 @@ public class Building : MonoBehaviour
         if(level == Constants.Difficulties.EASY)
         {
             flat = new ExercisesClass[9];
-            flat[0] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/SitUp").GetComponent<ExercisesClass>();
+            flat[0] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Sit up").GetComponent<ExercisesClass>();
+            //flat[0] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Quick steps").GetComponent<ExercisesClass>();
             flat[1] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Quick steps").GetComponent<ExercisesClass>();
             flat[2] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Circle crunches").GetComponent<ExercisesClass>();
             flat[3] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Breath sitting idle").GetComponent<ExercisesClass>();
@@ -143,7 +144,7 @@ public class Building : MonoBehaviour
             flat[11] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Cross jumps").GetComponent<ExercisesClass>();
             flat[12] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Pike walk").GetComponent<ExercisesClass>();
             flat[13] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Stretching 1").GetComponent<ExercisesClass>();
-            flat[14] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Pike walk").GetComponent<ExercisesClass>();
+            flat[14] = Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Stretching 2").GetComponent<ExercisesClass>();
         }
     }
 }

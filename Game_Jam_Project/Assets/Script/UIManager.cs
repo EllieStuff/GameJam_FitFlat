@@ -46,17 +46,25 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    void SelectLevel(Constants.Difficulties level)
-    {
-        building.SelectLevel(level);
-        new WaitForSeconds(2);
-        player.SetDestination();
+    void SelectLevel(Constants.Difficulties level)
 
+    {
+
+        building.SelectLevel(level);
+
+        new WaitForSeconds(2);
+
+        player.SetDestination();
+        
+    }
+
+
+    public void RefreshInfoPanel(string title, string explanation)
+    {
         infoPanelExplanation.text = explanation;
         infoPanelTitle.text = title;
         infoPanel.SetActive(true);
-    {
-    public void RefreshInfoPanel(string title, string explanation)
+
     }
 
 
