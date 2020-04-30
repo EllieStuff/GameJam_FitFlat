@@ -23,10 +23,14 @@ public class ExercisesClass : MonoBehaviour
     [SerializeField] bool questAnswer;
     [SerializeField] bool startExercise;
     [SerializeField] float exerciseCombo;
+    
+
     private bool questionAsked = false;
 
     private GameObject timerObj;
     public TextMeshProUGUI timer;
+
+    private GameObject skipButton;
 
     [Header("Question")]
     public string question;
@@ -49,6 +53,7 @@ public class ExercisesClass : MonoBehaviour
         exerciseCombo = initTime = 0;
 
         timer = GameObject.Find("TimerText").GetComponent<TextMeshProUGUI>();
+        skipButton = GameObject.Find("SkipButton");
         timerObj = GameObject.Find("Timer");
     }
 
@@ -57,12 +62,13 @@ public class ExercisesClass : MonoBehaviour
         if (startExercise && !isCompleted)
         {
             currentTime = timeExercise - (Time.time - initTime);
-            timer.SetText(((int)currentTime).ToString());
+            timer.SetText(((int)currentTime+1).ToString());
             if (currentTime <= 0 && mustAskQuestion && !questionAsked)
             {
                 questionAsked = true;
                 UIManager uiManager = GameObject.Find("GameManager").GetComponent<UIManager>();
                 uiManager.questionPanel.SetActive(true);
+                skipButton.SetActive(false);
                 uiManager.RefreshQuestionPanel(question, answers);
                 GameObject.Find("Timer").SetActive(false);
 
@@ -70,6 +76,7 @@ public class ExercisesClass : MonoBehaviour
             if (currentTime <= 0 && !mustAskQuestion)
             {
                 Building tmp = GameObject.Find("Building").GetComponent<Building>();
+                skipButton.SetActive(false);
                 tmp.doingExercise = false;
                 tmp.exerciseID++;              
                 currentTime = 0;
@@ -83,8 +90,6 @@ public class ExercisesClass : MonoBehaviour
             }
         }
 
-
-
         if(questAnswer)
         {
             GameObject.Find("Player").GetComponent<Player>().AddCombo(exerciseCombo);
@@ -96,6 +101,7 @@ public class ExercisesClass : MonoBehaviour
     {
         startExercise = true;
         timerObj.gameObject.SetActive(true);
+        skipButton.SetActive(true);
         animator.runtimeAnimatorController = controller;
         GameObject.Find("Player").GetComponent<Animator>().runtimeAnimatorController = controller;
         initTime = Time.time;
@@ -116,10 +122,15 @@ public class ExercisesClass : MonoBehaviour
 
     IEnumerator FuncTime(int time)
     {
+        timer.SetText("0");
         yield return new WaitForSeconds(time);
         timerObj.gameObject.SetActive(false);
 
     }
 
-    
+    public void SkipExercise () {
+        FuncTime(1);
+        timeExercise = 0;
+        currentTime=0;
+    }
 }

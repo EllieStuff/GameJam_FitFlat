@@ -35,7 +35,16 @@ public class Building : MonoBehaviour
         if (Vector3.Distance(player.transform.position, player.destination.transform.position) < 1.2f && !doingExercise)
         {
             player.agent.isStopped = true;
-            animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/Idle");
+            if (exerciseID == flat.Length)
+            {
+                animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/Win");
+            }
+            else
+            {
+                animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/Idle");
+            }
+            
+
 
             camera.DOOrthoSize(3f, 2f);
             GameObject vecinoTmp = GameObject.Find("Vecino" + exerciseID.ToString());
@@ -170,6 +179,7 @@ public class Building : MonoBehaviour
         }
 
         GameObject.Find("Timer").SetActive(false);
+        GameObject.Find("SkipButton").SetActive(false);
     }
 
     public void StartExercice()
@@ -183,6 +193,11 @@ public class Building : MonoBehaviour
     public ExercisesClass GetCurrentFlat()
     {
         return flat[exerciseID];
+    }
+
+    public void SkipExercis()
+    {
+        flat[exerciseID].SkipExercise();
     }
 
 }
