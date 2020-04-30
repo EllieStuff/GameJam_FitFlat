@@ -9,13 +9,14 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private int puntuation;
     [SerializeField] private float totalCombo;
-    [SerializeField] private int currentFlat;
     [SerializeField] private int puntuationBase;
     public Animator animator;
     public  NavMeshAgent agent;
     public GameObject destination;
     [SerializeField] TextMeshProUGUI score;
     [SerializeField] TextMeshProUGUI combo;
+    [SerializeField] TextMeshProUGUI exerciseID;
+    [SerializeField] Building building;
     public GameObject timerObj;
 
     // Start is called before the first frame update
@@ -34,6 +35,8 @@ public class Player : MonoBehaviour
     {
         score.text = puntuation.ToString();
         combo.text = "x" + totalCombo.ToString();
+        exerciseID.text = "Exercise " + (building.exerciseID+1).ToString();
+        Debug.Log(totalCombo);
     }
 
     public void AddCombo(float comb)
