@@ -57,7 +57,7 @@ public class ExercisesClass : MonoBehaviour
         if (startExercise && !isCompleted)
         {
             currentTime = timeExercise - (Time.time - initTime);
-            timer.SetText(((int)currentTime+1).ToString());
+            timer.SetText(((int)currentTime).ToString());
             if (currentTime <= 0 && mustAskQuestion && !questionAsked)
             {
                 questionAsked = true;
@@ -72,7 +72,7 @@ public class ExercisesClass : MonoBehaviour
                 Building tmp = GameObject.Find("Building").GetComponent<Building>();
                 tmp.doingExercise = false;
                 tmp.exerciseID++;              
-                currentTime = -1;
+                currentTime = 0;
                 isCompleted = true;
                 Player player = GameObject.Find("Player").GetComponent<Player>();
                 player.animator.SetBool("finish", true);
