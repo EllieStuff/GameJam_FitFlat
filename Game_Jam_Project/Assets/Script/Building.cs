@@ -35,16 +35,8 @@ public class Building : MonoBehaviour
         if (Vector3.Distance(player.transform.position, player.destination.transform.position) < 1.2f && !doingExercise)
         {
             player.agent.isStopped = true;
-            if (exerciseID == flat.Length)
-            {
-                animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/Win");
-            }
-            else
-            {
-                animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/Idle");
-            }
-            
 
+            animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/Idle");
 
             camera.DOOrthoSize(3f, 2f);
             GameObject vecinoTmp = GameObject.Find("Vecino" + exerciseID.ToString());
@@ -62,6 +54,13 @@ public class Building : MonoBehaviour
             camera.transform.DOLookAt(new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z), 1f);
             camera.transform.DOMoveX(player.transform.position.x - 2, 1f);
             camera.transform.DOMoveY(player.transform.position.y + 1.5f, 1f);
+
+            if (exerciseID == flat.Length && flat.Length != 0)
+            {
+                player.agent.isStopped = true;
+                animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/Win");
+            }
+
         }
 
     }
