@@ -15,11 +15,16 @@ public class UIManager : MonoBehaviour
 
     public GameObject infoPanel;
     public GameObject questionPanel;
+    public GameObject finalScorePanel;
+    public GameObject fsPanelNewBestScore;
 
     public TextMeshProUGUI infoPanelExplanation;
     public TextMeshProUGUI infoPanelTitle;
     public TextMeshProUGUI questionPanelQuestion;
     public TextMeshProUGUI[] questionPanelAnswers = new TextMeshProUGUI[3];
+    public TextMeshProUGUI fsPanelBestScore;
+    public TextMeshProUGUI fsPanelFinalScore;
+
     private string[] answersOrder = new string[3];
     [SerializeField] Image[] questionImg = new Image[3];
 
@@ -42,6 +47,8 @@ public class UIManager : MonoBehaviour
 
         infoPanel.SetActive(false);
         questionPanel.SetActive(false);
+        fsPanelNewBestScore.SetActive(false);
+        finalScorePanel.SetActive(false);
     }
 
     void SelectGenere(Constants.Genere gen)
@@ -67,6 +74,14 @@ public class UIManager : MonoBehaviour
 
         player.SetDestination();
         
+    }
+
+
+    public void RefreshFinalScorePanel(int bestScore, int finalScore)
+    {
+        fsPanelBestScore.text = bestScore.ToString();
+        fsPanelFinalScore.text = finalScore.ToString();
+
     }
 
     public void RefreshQuestionPanel(string question, string[] answers)
@@ -156,7 +171,9 @@ public class UIManager : MonoBehaviour
     IEnumerator StartMovingPlayer()
     {
         yield return new WaitForSeconds(2);
-        player.SetDestination();
+
+        if (building.exerciseID < building.FlatSize())
+            player.SetDestination();
     }
 
 }
