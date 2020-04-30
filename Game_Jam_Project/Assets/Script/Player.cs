@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     {
         puntuationBase = 2;
         puntuation = 0; //Init
-        totalCombo = 0.5f;
+        totalCombo = 1f;
         StartCoroutine("IncreasePuntuation");
     }
 
@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 
     public void AddCombo(float comb)
     {
-        totalCombo *= comb;
+        totalCombo += comb;
     }
 
     public void SetDestination()
