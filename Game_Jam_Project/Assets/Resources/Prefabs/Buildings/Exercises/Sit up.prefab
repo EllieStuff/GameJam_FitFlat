@@ -49,7 +49,7 @@ MonoBehaviour:
   explanationText: Hey neighbor! On the floor, face up, knees bent and feet on the
     floor, do an abdominal until bringing your pectoral very close to the knees.
   mustAskQuestion: 0
-  timeExercise: 10
+  timeExercise: 60
   isCompleted: 0
   questAnswer: 0
   startExercise: 0

@@ -93,7 +93,7 @@ public class Building : MonoBehaviour
             flat = new ExercisesClass[9];
             flatQuestions.Enqueue(4); flatQuestions.Enqueue(7);
             
-            flat[0] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Sit up").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);    //45s
+            flat[0] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Sit up idle").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);    //45s
             flat[1] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Quick steps").GetComponent<ExercisesClass>(),GameObject.Find("Exercices").transform);  //45s
             flat[2] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Circle crunches").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform); //45s
             flat[3] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Breath sitting idle").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform); //60s

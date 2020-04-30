@@ -75,6 +75,7 @@ public class ExercisesClass : MonoBehaviour
             }
             if (currentTime <= 0 && !mustAskQuestion)
             {
+
                 Building tmp = GameObject.Find("Building").GetComponent<Building>();
                 skipButton.SetActive(false);
                 tmp.doingExercise = false;
@@ -83,11 +84,13 @@ public class ExercisesClass : MonoBehaviour
                 isCompleted = true;
                 Player player = GameObject.Find("Player").GetComponent<Player>();
                 player.animator.SetBool("finish", true);
-                player.agent.isStopped = false;
                 player.destination.transform.position += new Vector3(0, 3f, 0);
-                player.SetDestination();
-                StartCoroutine(FuncTime(1));
-               
+                StartCoroutine(FinishExercise(4, player));
+                //player.agent.isStopped = false;
+                //player.destination.transform.position += new Vector3(0, 3f, 0);
+                //player.SetDestination();
+                //StartCoroutine(FuncTime(1));
+
             }
         }
 
@@ -121,6 +124,15 @@ public class ExercisesClass : MonoBehaviour
         return currentTime;
     }
 
+    IEnumerator FinishExercise(int time, Player ply)
+    {
+        timer.SetText("0");
+        yield return new WaitForSeconds(time);
+        ply.agent.isStopped = false;
+        ply.SetDestination();
+        timerObj.gameObject.SetActive(false);
+    }
+
     IEnumerator FuncTime(int time)
     {
         timer.SetText("0");
@@ -129,10 +141,6 @@ public class ExercisesClass : MonoBehaviour
 
     }
 
-    IEnumerator FinishExercise(int time)
-    {
-        yield return new WaitForSeconds(time);
-    }
 
     public void SkipExercise () {
         FuncTime(1);

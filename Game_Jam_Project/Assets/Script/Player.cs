@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
 
     public void SetDestination()
     {
+
         agent.SetDestination(destination.transform.position);
         animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/Walk");
     }
