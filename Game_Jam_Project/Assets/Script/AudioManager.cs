@@ -20,7 +20,7 @@ public class AudioManager : MonoBehaviour
     AudioSource backgroundMusic;
     AudioSource soundEffects;
 
-    private void Awake()
+    private void Start()
     {
         AudioSource[] audio = GetComponentsInChildren<AudioSource>();
         backgroundMusic = audio[0];
