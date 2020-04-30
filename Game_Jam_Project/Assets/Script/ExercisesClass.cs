@@ -62,7 +62,7 @@ public class ExercisesClass : MonoBehaviour
         if (startExercise && !isCompleted)
         {
             currentTime = timeExercise - (Time.time - initTime);
-            timer.SetText(((int)currentTime).ToString());
+            timer.SetText(((int)currentTime+1).ToString());
             if (currentTime <= 0 && mustAskQuestion && !questionAsked)
             {
                 questionAsked = true;
@@ -89,8 +89,6 @@ public class ExercisesClass : MonoBehaviour
                 StartCoroutine(FuncTime(1));
             }
         }
-
-
 
         if(questAnswer)
         {
@@ -124,13 +122,15 @@ public class ExercisesClass : MonoBehaviour
 
     IEnumerator FuncTime(int time)
     {
+        timer.SetText("0");
         yield return new WaitForSeconds(time);
         timerObj.gameObject.SetActive(false);
 
     }
 
     public void SkipExercise () {
-        timeExercise=0;
-
+        FuncTime(1);
+        timeExercise = 0;
+        currentTime=0;
     }
 }
