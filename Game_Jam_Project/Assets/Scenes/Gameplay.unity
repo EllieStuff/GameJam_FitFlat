@@ -2069,6 +2069,10 @@ MonoBehaviour:
   - {fileID: 685322972}
   fsPanelBestScore: {fileID: 255281501}
   fsPanelFinalScore: {fileID: 121105618}
+  questionImg:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &206040294
 GameObject:
   m_ObjectHideFlags: 0
@@ -4090,8 +4094,8 @@ MonoBehaviour:
         m_MethodName: SetCombo
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 359414604}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_ObjectArgument: {fileID: 461283744}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8171,8 +8175,8 @@ MonoBehaviour:
         m_MethodName: SetCombo
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 257539505}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_ObjectArgument: {fileID: 1015778988}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -10640,7 +10644,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 56.55
+  m_fontSize: 54.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -16222,8 +16226,8 @@ MonoBehaviour:
         m_MethodName: SetCombo
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 685322972}
-          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_ObjectArgument: {fileID: 1728074208}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -18116,6 +18120,7 @@ MonoBehaviour:
   durationExercise: 0
   uiManager: {fileID: 203924368}
   doingExercise: 0
+  finished: 0
   exerciseID: 0
 --- !u!65 &1951646889
 BoxCollider:
