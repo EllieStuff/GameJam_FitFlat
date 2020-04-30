@@ -6,6 +6,7 @@ public class Building : MonoBehaviour
 {
     public Constants.Difficulties difficulty;
     [SerializeField] ExercisesClass[] flat;
+    public Queue<int> flatQuestions = new Queue<int>();
     public ExercisesClass[] exercises = new ExercisesClass[(int)Constants.ExerciseType.COUNT];
     [SerializeField] Animator animator;
     [SerializeField] RuntimeAnimatorController controller;
@@ -45,10 +46,8 @@ public class Building : MonoBehaviour
             uiManager.RefreshInfoPanel(flat[exerciseID].titleText, flat[exerciseID].explanationText);
 
             doingExercise = true;
-            Debug.Log(doingExercise);
         }
 
-       
         if (!doingExercise)
         {
             camera.transform.DOLookAt(new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z), 1f);
@@ -84,11 +83,13 @@ public class Building : MonoBehaviour
             GameObject.Find("Floor10").SetActive(false);
 
             flat = new ExercisesClass[9];
-            flat[0] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Sit up").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);    
-            flat[1] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Quick steps").GetComponent<ExercisesClass>(),GameObject.Find("Exercices").transform);
-            flat[2] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Circle crunches").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[3] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Breath sitting idle").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[4] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Push ups").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flatQuestions.Enqueue(4); flatQuestions.Enqueue(7);
+            
+            flat[0] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Sit up").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);    //45s
+            flat[1] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Quick steps").GetComponent<ExercisesClass>(),GameObject.Find("Exercices").transform);  //45s
+            flat[2] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Circle crunches").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform); //45s
+            flat[3] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Breath sitting idle").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform); //60s
+            flat[4] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Push ups").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);    //45s
             flat[5] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Planch").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
             flat[6] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Cross jumps").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
             flat[7] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Pike walk").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
@@ -112,6 +113,8 @@ public class Building : MonoBehaviour
             //GameObject.Find("Floor13").SetActive(false);
 
             flat = new ExercisesClass[13];
+            flatQuestions.Enqueue(2); flatQuestions.Enqueue(6); flatQuestions.Enqueue(10);
+
             flat[0] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Jumping Jacks").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
             flat[1] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Pike walk").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
             flat[2] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Planch").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
@@ -135,9 +138,9 @@ public class Building : MonoBehaviour
         }
         else
         {
-           
-
             flat = new ExercisesClass[15];
+            flatQuestions.Enqueue(2); flatQuestions.Enqueue(9); flatQuestions.Enqueue(11);
+
             flat[0] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Quick steps").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
             flat[1] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Air Squad").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
             flat[2] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Bicycle crunch").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
@@ -163,6 +166,7 @@ public class Building : MonoBehaviour
         for (int i = 0; i < flat.Length; i++)
         {
             flat[i].Init();
+            player.ReinitPuntuation();
         }
 
         GameObject.Find("Timer").SetActive(false);
@@ -177,5 +181,9 @@ public class Building : MonoBehaviour
         camera.DOOrthoSize(2f, 1f);
     }
 
+    public ExercisesClass GetCurrentFlat()
+    {
+        return flat[exerciseID];
+    }
 
 }

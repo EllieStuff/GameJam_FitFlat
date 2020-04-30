@@ -49,11 +49,15 @@ MonoBehaviour:
   explanationText: Hey neighbor! Place your hands on the floor, stretch your legs,
     and squeeze the glutes. Stay in this position. You can do it with knees in the
     floor too.
+  mustAskQuestion: 0
   timeExercise: 45
   isCompleted: 0
   questAnswer: 0
   startExercise: 0
   exerciseCombo: 0
-  question: {fileID: 0}
-  answers: []
-  answerId: 0
+  timer: {fileID: 0}
+  question: What did you notice when you did planch?
+  answers:
+  - Abdominals and glutes
+  - Pectoral and abdominals
+  - Lumbar

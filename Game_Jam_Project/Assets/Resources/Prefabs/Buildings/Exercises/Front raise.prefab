@@ -48,11 +48,15 @@ MonoBehaviour:
   titleText: Front Raise
   explanationText: Hey neighbor! While you are standing, raise one arm frontally and
     lower it again, then change arms.
+  mustAskQuestion: 0
   timeExercise: 0
   isCompleted: 0
   questAnswer: 0
   startExercise: 0
   exerciseCombo: 0
-  question: {fileID: 0}
-  answers: []
-  answerId: 0
+  timer: {fileID: 0}
+  question: 
+  answers:
+  - 
+  - 
+  - 

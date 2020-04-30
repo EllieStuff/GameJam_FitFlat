@@ -48,11 +48,15 @@ MonoBehaviour:
   titleText: Biceps Curls
   explanationText: Hey neighbor! Standing, holding a bottle of water or a bag with
     your hand and your elbow close to your body, flex that arm and stretch it.
+  mustAskQuestion: 0
   timeExercise: 45
   isCompleted: 0
   questAnswer: 0
   startExercise: 0
   exerciseCombo: 0
-  question: {fileID: 0}
-  answers: []
-  answerId: 0
+  timer: {fileID: 0}
+  question: What did you notice when you did Biceps Curl?
+  answers:
+  - Arms
+  - Elbow, arms and back
+  - Elbow and arms

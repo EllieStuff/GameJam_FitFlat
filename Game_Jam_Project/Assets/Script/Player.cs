@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public GameObject destination;
     [SerializeField] TextMeshProUGUI score;
     [SerializeField] TextMeshProUGUI combo;
+    public GameObject timerObj;
 
     // Start is called before the first frame update
 
@@ -24,7 +25,7 @@ public class Player : MonoBehaviour
     {
         puntuationBase = 2;
         puntuation = 0; //Init
-        totalCombo = 0;
+        totalCombo = 0.5f;
         StartCoroutine("IncreasePuntuation");
     }
 
@@ -37,7 +38,7 @@ public class Player : MonoBehaviour
 
     public void AddCombo(float comb)
     {
-        totalCombo += comb;
+        totalCombo *= comb;
     }
 
     public void SetDestination()
@@ -46,11 +47,18 @@ public class Player : MonoBehaviour
         animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/Walk");
     }
 
+    public void ReinitPuntuation()
+    {
+        puntuation = 0;
+    }
+
     IEnumerator IncreasePuntuation()
     {
         while (true)
         {
-            puntuation += (int)(puntuationBase * totalCombo);
+            if(timerObj.activeSelf)
+                puntuation += (int)(puntuationBase * totalCombo);
+
             yield return new WaitForSeconds(.1f);
         }
     }

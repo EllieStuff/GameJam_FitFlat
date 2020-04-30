@@ -12,10 +12,18 @@ public class UIManager : MonoBehaviour
     [SerializeField] Button continue_button;
     [SerializeField] Building building;
     [SerializeField] Player player;
+
     public GameObject infoPanel;
+    public GameObject questionPanel;
 
     public TextMeshProUGUI infoPanelExplanation;
     public TextMeshProUGUI infoPanelTitle;
+    public TextMeshProUGUI questionPanelQuestion;
+    public TextMeshProUGUI[] questionPanelAnswers = new TextMeshProUGUI[3];
+
+    private string[] answersOrder = new string[3];
+
+    //1, 1.25, 1.5
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +35,13 @@ public class UIManager : MonoBehaviour
         difficult_buttons[1].onClick.AddListener(() => SelectLevel(Constants.Difficulties.MEDIUM));
         difficult_buttons[2].onClick.AddListener(() => SelectLevel(Constants.Difficulties.HARD));
 
+
         continue_button.onClick.AddListener(() => infoPanel.SetActive(false));
 
         building = GameObject.Find("Building").GetComponent<Building>();
 
         infoPanel.SetActive(false);
+        questionPanel.SetActive(false);
     }
 
     void SelectGenere(Constants.Genere gen)
@@ -57,6 +67,72 @@ public class UIManager : MonoBehaviour
 
         player.SetDestination();
         
+    }
+
+    public void RefreshQuestionPanel(string question, string[] answers)
+    {
+        questionPanelQuestion.SetText(question);
+
+        for(int i = 0; i < answers.Length; i++)
+        {
+            answersOrder[i] = answers[i];
+
+            string tmpAns = answers[Random.Range(0, answers.Length)];
+            while (AnsRepeated(tmpAns, questionPanelAnswers.Length))
+            {
+                tmpAns = answers[Random.Range(0, answers.Length)];
+            }
+            questionPanelAnswers[i].text = tmpAns;
+        }
+        
+    }
+
+    private bool AnsRepeated(string currentAns, int length)
+    {
+        for(int i = 0; i < length; i++)
+        {
+            if (questionPanelAnswers[i].text == currentAns) return true;
+
+        }
+        return false;
+    }
+
+    public void SetCombo(TextMeshProUGUI buttonAnser)
+    {
+        int comboPos = GetAnswerPos(buttonAnser.text);
+        switch (comboPos)
+        {
+            case 0:
+                player.AddCombo(1.5f);
+                break;
+
+            case 1:
+                player.AddCombo(1.2f);
+                break;
+
+            case 2:
+                player.AddCombo(1);
+                break;
+
+            default:
+                break;
+
+        }
+
+        questionPanel.SetActive(false);
+        building.GetCurrentFlat().mustAskQuestion = false;
+    }
+
+    private int GetAnswerPos(string buttonAnswer)
+    {
+        for (int i = 0; i < answersOrder.Length; i++)
+        {
+            if (buttonAnswer == answersOrder[i])
+                return i;
+            
+        }
+
+        return -1;
     }
 
 

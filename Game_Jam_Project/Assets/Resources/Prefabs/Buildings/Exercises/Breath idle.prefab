@@ -48,11 +48,15 @@ MonoBehaviour:
   titleText: Breath
   explanationText: Hey neighbor! While you are standing, take a deep breath and let
     it go.
+  mustAskQuestion: 0
   timeExercise: 75
   isCompleted: 0
   questAnswer: 0
   startExercise: 0
   exerciseCombo: 0
-  question: {fileID: 0}
-  answers: []
-  answerId: 0
+  timer: {fileID: 0}
+  question: 
+  answers:
+  - 
+  - 
+  - 

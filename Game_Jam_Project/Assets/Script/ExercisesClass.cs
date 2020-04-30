@@ -12,6 +12,7 @@ public class ExercisesClass : MonoBehaviour
     public RuntimeAnimatorController controller;
     public string titleText;
     public string explanationText;
+    public bool mustAskQuestion = false;
 
     //private TextMeshProUGUI explanation;
     //private TextMeshProUGUI title;
@@ -22,20 +23,27 @@ public class ExercisesClass : MonoBehaviour
     [SerializeField] bool questAnswer;
     [SerializeField] bool startExercise;
     [SerializeField] float exerciseCombo;
+    private bool questionAsked = false;
 
     private GameObject timerObj;
     public TextMeshProUGUI timer;
 
     [Header("Question")]
     public string question;
-    public string[] answer = new string [3];
+    public string[] answers = new string [3];
+
+    private void Start()
+    {
+        if(answers[0] == "")
+        {
+            answers[0] = "A";
+            answers[1] = "B";
+            answers[2] = "C";
+        }
+    }
 
     public void Init()
     {
-        //GameObject infoPanel = GameObject.FindGameObjectWithTag("InfoPanel");
-        //explanation = infoPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        //title = infoPanel.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>();
-
         startExercise = isCompleted = false;
         currentTime = timeExercise;
         exerciseCombo = initTime = 0;
@@ -46,11 +54,20 @@ public class ExercisesClass : MonoBehaviour
 
     private void Update()
     {
-        if (startExercise&&!isCompleted)
+        if (startExercise && !isCompleted)
         {
             currentTime = timeExercise - (Time.time - initTime);
             timer.SetText(((int)currentTime).ToString());
-            if (currentTime <= 0)
+            if (currentTime <= 0 && mustAskQuestion && !questionAsked)
+            {
+                questionAsked = true;
+                UIManager uiManager = GameObject.Find("GameManager").GetComponent<UIManager>();
+                uiManager.questionPanel.SetActive(true);
+                uiManager.RefreshQuestionPanel(question, answers);
+                GameObject.Find("Timer").SetActive(false);
+
+            }
+            if (currentTime <= 0 && !mustAskQuestion)
             {
                 Building tmp = GameObject.Find("Building").GetComponent<Building>();
                 tmp.doingExercise = false;
@@ -66,6 +83,8 @@ public class ExercisesClass : MonoBehaviour
             }
         }
 
+
+
         if(questAnswer)
         {
             GameObject.Find("Player").GetComponent<Player>().AddCombo(exerciseCombo);
@@ -80,6 +99,14 @@ public class ExercisesClass : MonoBehaviour
         animator.runtimeAnimatorController = controller;
         GameObject.Find("Player").GetComponent<Animator>().runtimeAnimatorController = controller;
         initTime = Time.time;
+        Building tmpBuilding = GameObject.Find("Building").GetComponent<Building>();
+        if (tmpBuilding.flatQuestions.Count > 0 && tmpBuilding.exerciseID == tmpBuilding.flatQuestions.Peek())
+        {
+            tmpBuilding.flatQuestions.Dequeue();
+            mustAskQuestion = true;
+
+        }
+
     }
 
     public float GetCurrentTime()
@@ -91,6 +118,7 @@ public class ExercisesClass : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         timerObj.gameObject.SetActive(false);
+
     }
 
     

@@ -49,11 +49,15 @@ MonoBehaviour:
   explanationText: Hey neighbor! This exercise is hard! Place your hands on the ground
     facing the ground, stretch your legs, flex them again and jump up with your hands
     up.
+  mustAskQuestion: 0
   timeExercise: 35
   isCompleted: 0
   questAnswer: 0
   startExercise: 0
   exerciseCombo: 0
-  question: {fileID: 0}
-  answers: []
-  answerId: 0
+  timer: {fileID: 0}
+  question: What did you notice when you did Burpees?
+  answers:
+  - Arms, back, pectoral
+  - Arms
+  - Lumbar

@@ -48,11 +48,15 @@ MonoBehaviour:
   titleText: Sit Ups
   explanationText: Hey neighbor! On the floor, face up, knees bent and feet on the
     floor, do an abdominal until bringing your pectoral very close to the knees.
+  mustAskQuestion: 0
   timeExercise: 3
   isCompleted: 0
   questAnswer: 0
   startExercise: 0
   exerciseCombo: 0
-  question: {fileID: 0}
-  answers: []
-  answerId: 0
+  timer: {fileID: 0}
+  question: 
+  answers:
+  - 
+  - 
+  - 

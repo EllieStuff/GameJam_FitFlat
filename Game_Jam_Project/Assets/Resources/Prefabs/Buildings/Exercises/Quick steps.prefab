@@ -48,11 +48,15 @@ MonoBehaviour:
   titleText: Quick Steps
   explanationText: Hey neighbor! Try to do two side jumps and come back. Don't forget
     to flex your legs.
-  timeExercise: 45
+  mustAskQuestion: 0
+  timeExercise: 3
   isCompleted: 0
   questAnswer: 0
   startExercise: 0
   exerciseCombo: 0
-  question: {fileID: 0}
-  answers: []
-  answerId: 0
+  timer: {fileID: 0}
+  question: 
+  answers:
+  - 
+  - 
+  - 

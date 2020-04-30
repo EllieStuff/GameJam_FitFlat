@@ -48,11 +48,15 @@ MonoBehaviour:
   titleText: Sit and Breath
   explanationText: Hey neighbor! Sit in a chair and relax. Take a deep breath and
     let it go.
-  timeExercise: 60
+  mustAskQuestion: 0
+  timeExercise: 3
   isCompleted: 0
   questAnswer: 0
   startExercise: 0
   exerciseCombo: 0
-  question: {fileID: 0}
-  answers: []
-  answerId: 0
+  timer: {fileID: 0}
+  question: 
+  answers:
+  - 
+  - 
+  - 

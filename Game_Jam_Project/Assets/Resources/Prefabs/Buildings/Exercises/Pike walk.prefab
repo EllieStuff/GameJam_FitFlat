@@ -48,11 +48,15 @@ MonoBehaviour:
   titleText: Pike Walk
   explanationText: Hey neighbor! Try flexing your back and legs, until you put your
     hands on the floor. Walk only with your hands forward and come back.
+  mustAskQuestion: 0
   timeExercise: 60
   isCompleted: 0
   questAnswer: 0
   startExercise: 0
   exerciseCombo: 0
-  question: {fileID: 0}
-  answers: []
-  answerId: 0
+  timer: {fileID: 0}
+  question: What did you notice when you did pike-walk?
+  answers:
+  - Arms and back
+  - 'Pectoral '
+  - Legs and arms

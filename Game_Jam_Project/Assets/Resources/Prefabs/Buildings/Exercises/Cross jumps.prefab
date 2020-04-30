@@ -48,11 +48,15 @@ MonoBehaviour:
   titleText: Cross Jumps
   explanationText: "Hey neightbor! Let\u2019s do a square with little jumps. Can you
     try it?"
+  mustAskQuestion: 0
   timeExercise: 60
   isCompleted: 0
   questAnswer: 0
   startExercise: 0
   exerciseCombo: 0
-  question: {fileID: 0}
-  answers: []
-  answerId: 0
+  timer: {fileID: 0}
+  question: What did you notice when you did Jump Rotation?
+  answers:
+  - Tired, i bent my legs
+  - Tired, i did it so fast
+  - "Easy, i\u2019m not tired"
