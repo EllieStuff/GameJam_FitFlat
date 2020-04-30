@@ -15,6 +15,7 @@ public class Building : MonoBehaviour
     public float durationExercise;
     public UIManager uiManager;
     public bool doingExercise;
+    public bool finished = false;
 
     public int exerciseID = 0;
 
@@ -32,7 +33,7 @@ public class Building : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(player.transform.position, player.destination.transform.position) < 1.2f && !doingExercise)
+        if (Vector3.Distance(player.transform.position, player.destination.transform.position) < 1.2f && !doingExercise && !finished)
         {
             player.agent.isStopped = true;
 
@@ -55,10 +56,22 @@ public class Building : MonoBehaviour
             camera.transform.DOMoveX(player.transform.position.x - 2, 1f);
             camera.transform.DOMoveY(player.transform.position.y + 1.5f, 1f);
 
-            if (exerciseID == flat.Length && flat.Length != 0)
+            if (exerciseID == flat.Length && flat.Length != 0 && !finished)
             {
+                finished = true;
+                player.agent.isStopped = true;
                 player.agent.isStopped = true;
                 animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/Win");
+                GameObject.Find("ExerciseID").SetActive(false);
+                GameObject.Find("PlayerCombo").SetActive(false);
+                GameObject.Find("Player Score").SetActive(false);
+                uiManager.finalScorePanel.SetActive(true);
+                if(player.bestPuntuation < player.GetPuntuation())
+                {
+                    player.bestPuntuation = player.GetPuntuation();
+                    uiManager.fsPanelNewBestScore.SetActive(true);
+                }
+                uiManager.RefreshFinalScorePanel(player.bestPuntuation, player.GetPuntuation());
             }
 
         }
@@ -192,6 +205,11 @@ public class Building : MonoBehaviour
     public ExercisesClass GetCurrentFlat()
     {
         return flat[exerciseID];
+    }
+
+    public int FlatSize()
+    {
+        return flat.Length;
     }
 
     public void SkipExercis()
