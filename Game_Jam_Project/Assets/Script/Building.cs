@@ -175,8 +175,7 @@ public class Building : MonoBehaviour
     public void StartExercice()
     {
         flat[exerciseID].StartExercice(animator);
-
-        camera.transform.DOLookAt(new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z), 2f);
+        camera.transform.DOLookAt(new Vector3(player.transform.position.x , player.transform.position.y + 1, player.transform.position.z), 2f);
         camera.transform.DOMoveY(player.transform.position.y + 2f, 1f);
         camera.DOOrthoSize(2f, 1f);
     }
