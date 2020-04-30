@@ -49,7 +49,7 @@ MonoBehaviour:
   explanationText: Hey neighbor! Sit in a chair and relax. Take a deep breath and
     let it go.
   mustAskQuestion: 0
-  timeExercise: 3
+  timeExercise: 45
   isCompleted: 0
   questAnswer: 0
   startExercise: 0

@@ -49,7 +49,7 @@ MonoBehaviour:
   explanationText: Hey neighbor! Sit and support your back. Make a large circle as
     you raise your pectoral and lower again.
   mustAskQuestion: 0
-  timeExercise: 3
+  timeExercise: 45
   isCompleted: 0
   questAnswer: 0
   startExercise: 0

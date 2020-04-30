@@ -87,6 +87,7 @@ public class ExercisesClass : MonoBehaviour
                 player.destination.transform.position += new Vector3(0, 3f, 0);
                 player.SetDestination();
                 StartCoroutine(FuncTime(1));
+               
             }
         }
 
@@ -126,6 +127,11 @@ public class ExercisesClass : MonoBehaviour
         yield return new WaitForSeconds(time);
         timerObj.gameObject.SetActive(false);
 
+    }
+
+    IEnumerator FinishExercise(int time)
+    {
+        yield return new WaitForSeconds(time);
     }
 
     public void SkipExercise () {

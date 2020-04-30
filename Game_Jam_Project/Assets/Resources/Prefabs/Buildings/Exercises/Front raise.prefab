@@ -49,7 +49,7 @@ MonoBehaviour:
   explanationText: Hey neighbor! While you are standing, raise one arm frontally and
     lower it again, then change arms.
   mustAskQuestion: 0
-  timeExercise: 0
+  timeExercise: 60
   isCompleted: 0
   questAnswer: 0
   startExercise: 0

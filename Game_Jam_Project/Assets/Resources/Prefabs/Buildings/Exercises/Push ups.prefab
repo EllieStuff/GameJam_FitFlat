@@ -50,7 +50,7 @@ MonoBehaviour:
     and squeeze the glutes. Lower the pectoral until the arms are flexed at 90 degrees,
     raise.
   mustAskQuestion: 0
-  timeExercise: 3
+  timeExercise: 45
   isCompleted: 0
   questAnswer: 0
   startExercise: 0
