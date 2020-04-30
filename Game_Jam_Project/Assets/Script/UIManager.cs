@@ -20,8 +20,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI infoPanelTitle;
     public TextMeshProUGUI questionPanelQuestion;
     public TextMeshProUGUI[] questionPanelAnswers = new TextMeshProUGUI[3];
-
     private string[] answersOrder = new string[3];
+    [SerializeField] Image[] questionImg = new Image[3];
 
     //1, 1.25, 1.5
 
@@ -97,12 +97,17 @@ public class UIManager : MonoBehaviour
         return false;
     }
 
-    public void SetCombo(TextMeshProUGUI buttonAnser)
+    public void SetCombo(GameObject buttonAnswer)
     {
-        int comboPos = GetAnswerPos(buttonAnser.text);
+        TextMeshProUGUI _buttonAnswer = buttonAnswer.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        Image imgAnswer = buttonAnswer.GetComponent<Image>();
+        imgAnswer.color = Color.red;
+        int comboPos = GetAnswerPos(_buttonAnswer.text);
+        
         switch (comboPos)
         {
             case 0:
+                imgAnswer.color = Color.green;
                 player.AddCombo(1.5f);
                 break;
 
@@ -119,10 +124,16 @@ public class UIManager : MonoBehaviour
 
         }
 
+        StartCoroutine(QuestionPanelFalse(1, imgAnswer));
+    }
+
+    IEnumerator QuestionPanelFalse(float time, Image imageAnswer)
+    {
+        yield return new WaitForSeconds(time);
+        imageAnswer.color = Color.white;
         questionPanel.SetActive(false);
         building.GetCurrentFlat().mustAskQuestion = false;
     }
-
     private int GetAnswerPos(string buttonAnswer)
     {
         for (int i = 0; i < answersOrder.Length; i++)
@@ -135,16 +146,12 @@ public class UIManager : MonoBehaviour
         return -1;
     }
 
-
     public void RefreshInfoPanel(string title, string explanation)
     {
         infoPanelExplanation.text = explanation;
         infoPanelTitle.text = title;
 
     }
-
-
-
 
     IEnumerator StartMovingPlayer()
     {

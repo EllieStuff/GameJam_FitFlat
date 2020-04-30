@@ -86,10 +86,10 @@ public class ExercisesClass : MonoBehaviour
                 player.animator.SetBool("finish", true);
                 player.destination.transform.position += new Vector3(0, 3f, 0);
                 StartCoroutine(FinishExercise(4, player));
+                StartCoroutine(FuncTime(0.2f));
                 //player.agent.isStopped = false;
                 //player.destination.transform.position += new Vector3(0, 3f, 0);
                 //player.SetDestination();
-                //StartCoroutine(FuncTime(1));
 
             }
         }
@@ -133,7 +133,7 @@ public class ExercisesClass : MonoBehaviour
         timerObj.gameObject.SetActive(false);
     }
 
-    IEnumerator FuncTime(int time)
+    IEnumerator FuncTime(float time)
     {
         timer.SetText("0");
         yield return new WaitForSeconds(time);
