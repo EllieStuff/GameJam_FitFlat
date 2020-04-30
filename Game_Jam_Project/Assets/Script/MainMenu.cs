@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
@@ -15,16 +16,16 @@ public class MainMenu : MonoBehaviour
     {
         playBtn = GameObject.Find("PlayButton").GetComponent<Button>();
         optionsBtn = GameObject.Find("OptionsButton").GetComponent<Button>();
-        // exitBtn = GameObject.Find("ExitButton").GetComponent<Button>();
 
         playBtn.onClick.AddListener(()=>LoadScene("Gameplay"));
-        // ivexitBtn.onClick.AddListener(() => ExitGame());
     }
 
     void LoadScene(string name)
     {
-        SceneManager.LoadScene(name);
+        StartCoroutine(Fade.ScreenFadeInAndLoadScene(0.5f, "FadeImage", name));
+        StartCoroutine(Fade.MusicFadeOut(0.5f, Resources.Load<AudioMixer>("Audio/AudioMixers/MainMixer")));
     }
+
 
     public void ExitGame()
     {

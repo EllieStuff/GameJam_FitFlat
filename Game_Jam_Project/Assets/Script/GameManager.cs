@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
         {
 
         }
+
+        StartCoroutine(Fade.ScreenFadeOut(0.5f, "FadeImage"));
     }
 
     // Update is called once per frame

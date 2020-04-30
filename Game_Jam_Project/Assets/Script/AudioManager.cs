@@ -39,6 +39,8 @@ public class AudioManager : MonoBehaviour
         }
 
         GameObject.Find("OptionsMenu").SetActive(false);
+
+        StartCoroutine(Fade.MusicFadeIn(0.5f, audioMixer));
     }
 
     void Update()
