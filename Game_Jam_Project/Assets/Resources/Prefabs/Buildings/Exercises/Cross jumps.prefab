@@ -55,8 +55,8 @@ MonoBehaviour:
   startExercise: 0
   exerciseCombo: 0
   timer: {fileID: 0}
-  question: What did you notice when you did Jump Rotation?
+  question: How do you feel after doing this exercice?
   answers:
-  - Tired, i bent my legs
+  - Tired and I bent my legs while doing it
   - Tired, i did it so fast
   - "Easy, i\u2019m not tired"

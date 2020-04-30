@@ -55,7 +55,8 @@ MonoBehaviour:
   startExercise: 0
   exerciseCombo: 0
   timer: {fileID: 0}
-  question: What did you notice when you did Biceps Curl?
+  question: Which part of your body did you notice getting worked up when you did
+    the exercise?
   answers:
   - Arms
   - Elbow, arms and back

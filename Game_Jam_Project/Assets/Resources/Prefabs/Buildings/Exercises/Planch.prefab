@@ -56,7 +56,8 @@ MonoBehaviour:
   startExercise: 0
   exerciseCombo: 0
   timer: {fileID: 0}
-  question: What did you notice when you did planch?
+  question: Which part of your body did you notice getting worked up when you did
+    the exercise?
   answers:
   - Abdominals and glutes
   - Pectoral and abdominals
