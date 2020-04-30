@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField] TextMeshProUGUI exerciseID;
     [SerializeField] Building building;
     public GameObject timerObj;
-    public int bestPuntuation = 0;
+    public int bestPuntuation;
 
     // Start is called before the first frame update
 
@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     {
         puntuationBase = 2;
         puntuation = 0; //Init
+        bestPuntuation = PlayerPrefs.GetInt("BestPuntuation", 0);
         totalCombo = 1f;
         StartCoroutine("IncreasePuntuation");
     }

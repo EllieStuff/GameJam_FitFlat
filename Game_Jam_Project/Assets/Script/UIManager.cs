@@ -172,8 +172,7 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
 
-        if (building.exerciseID < building.FlatSize())
-            player.SetDestination();
+        player.SetDestination();
     }
 
 }

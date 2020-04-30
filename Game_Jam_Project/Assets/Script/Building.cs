@@ -65,10 +65,12 @@ public class Building : MonoBehaviour
                 GameObject.Find("ExerciseID").SetActive(false);
                 GameObject.Find("PlayerCombo").SetActive(false);
                 GameObject.Find("Player Score").SetActive(false);
+                GameObject.Find("OptionsButton").SetActive(false);
                 uiManager.finalScorePanel.SetActive(true);
                 if(player.bestPuntuation < player.GetPuntuation())
                 {
                     player.bestPuntuation = player.GetPuntuation();
+                    PlayerPrefs.SetInt("BestPuntuation", player.bestPuntuation);
                     uiManager.fsPanelNewBestScore.SetActive(true);
                 }
                 uiManager.RefreshFinalScorePanel(player.bestPuntuation, player.GetPuntuation());
