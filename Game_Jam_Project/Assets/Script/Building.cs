@@ -170,6 +170,7 @@ public class Building : MonoBehaviour
         }
 
         GameObject.Find("Timer").SetActive(false);
+        GameObject.Find("SkipButton").SetActive(false);
     }
 
     public void StartExercice()
@@ -184,6 +185,11 @@ public class Building : MonoBehaviour
     public ExercisesClass GetCurrentFlat()
     {
         return flat[exerciseID];
+    }
+
+    public void SkipExercis()
+    {
+        flat[exerciseID].SkipExercise();
     }
 
 }
