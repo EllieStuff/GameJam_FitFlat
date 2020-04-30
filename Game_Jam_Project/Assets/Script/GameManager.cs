@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+        // StartCoroutine(Fade.ScreenFadeInAndLoadScene(0.5f,"FadeImage", "MainMenu"));
+        // StartCoroutine(Fade.MusicFadeOut(0.5f, Resources.Load<AudioMixer>("Audio/AudioMixers/MainMixer")));
     }
     public void PauseGame()
     {
@@ -51,6 +53,10 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1f;
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
     
 
 }

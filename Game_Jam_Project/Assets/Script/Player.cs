@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
         score.text = puntuation.ToString();
         combo.text = "x" + totalCombo.ToString();
         exerciseID.text = "Exercise " + (building.exerciseID+1).ToString();
-        Debug.Log(totalCombo);
     }
 
     public void AddCombo(float comb)
