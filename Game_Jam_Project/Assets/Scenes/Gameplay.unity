@@ -11310,7 +11310,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 54.55
+  m_fontSize: 54.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -23587,6 +23587,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5231065256429046200, guid: c980a8c9a80556e40a8cb9cb07ba4bc7,
         type: 3}
+      propertyPath: effectClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231065256429046200, guid: c980a8c9a80556e40a8cb9cb07ba4bc7,
+        type: 3}
       propertyPath: effectsSlider
       value: 
       objectReference: {fileID: 1789108470}
@@ -23595,6 +23600,11 @@ PrefabInstance:
       propertyPath: musicSlider
       value: 
       objectReference: {fileID: 1403641623}
+    - target: {fileID: 5231065256429046200, guid: c980a8c9a80556e40a8cb9cb07ba4bc7,
+        type: 3}
+      propertyPath: effectClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: b80f0ad547dee5e45b8f7920cb6181fe, type: 3}
     - target: {fileID: 5231065256429046207, guid: c980a8c9a80556e40a8cb9cb07ba4bc7,
         type: 3}
       propertyPath: m_LocalPosition.x

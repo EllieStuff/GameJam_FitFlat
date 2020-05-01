@@ -127,6 +127,7 @@ public class ExercisesClass : MonoBehaviour
     IEnumerator FinishExercise(int time, Player ply)
     {
         timer.SetText("0");
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().PlayEndExerciseAudio();
         yield return new WaitForSeconds(time);
         ply.agent.isStopped = false;
         ply.SetDestination();

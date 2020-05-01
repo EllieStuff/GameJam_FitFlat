@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -320,6 +320,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5231065256429046200, guid: c980a8c9a80556e40a8cb9cb07ba4bc7,
         type: 3}
+      propertyPath: effectClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231065256429046200, guid: c980a8c9a80556e40a8cb9cb07ba4bc7,
+        type: 3}
       propertyPath: effectsSlider
       value: 
       objectReference: {fileID: 1347514122}
@@ -328,6 +333,11 @@ PrefabInstance:
       propertyPath: musicSlider
       value: 
       objectReference: {fileID: 614630781}
+    - target: {fileID: 5231065256429046200, guid: c980a8c9a80556e40a8cb9cb07ba4bc7,
+        type: 3}
+      propertyPath: effectClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: b80f0ad547dee5e45b8f7920cb6181fe, type: 3}
     - target: {fileID: 5231065256429046207, guid: c980a8c9a80556e40a8cb9cb07ba4bc7,
         type: 3}
       propertyPath: m_LocalPosition.x

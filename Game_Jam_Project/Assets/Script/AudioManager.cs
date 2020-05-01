@@ -82,4 +82,10 @@ public class AudioManager : MonoBehaviour
     {
         soundEffects.PlayOneShot(effectClips[0]);
     }
+
+    public void PlayEndExerciseAudio()
+    {
+        soundEffects.PlayOneShot(effectClips[1]);
+    }
+
 }
