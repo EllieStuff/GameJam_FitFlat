@@ -133,7 +133,7 @@ public class UIManager : MonoBehaviour
     {
         TextMeshProUGUI _buttonAnswer = buttonAnswer.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         Image imgAnswer = buttonAnswer.GetComponent<Image>();
-        imgAnswer.color = Color.red;
+        imgAnswer.color = Color.grey;
         int comboPos = GetAnswerPos(_buttonAnswer.text);
         
         switch (comboPos)
