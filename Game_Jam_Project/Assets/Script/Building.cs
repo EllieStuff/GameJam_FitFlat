@@ -62,6 +62,7 @@ public class Building : MonoBehaviour
                 player.agent.isStopped = true;
                 player.agent.isStopped = true;
                 animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/Win");
+                camera.DOOrthoSize(12f, 10f);               
                 GameObject.Find("ExerciseID").SetActive(false);
                 GameObject.Find("PlayerCombo").SetActive(false);
                 GameObject.Find("Player Score").SetActive(false);
