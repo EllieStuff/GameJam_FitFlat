@@ -56,25 +56,28 @@ public class Building : MonoBehaviour
             camera.transform.DOMoveX(player.transform.position.x - 2, 1f);
             camera.transform.DOMoveY(player.transform.position.y + 1.5f, 1f);
 
-            if (exerciseID == flat.Length && flat.Length != 0 && !finished)
+            if (exerciseID == flat.Length && flat.Length != 0) 
             {
-                finished = true;
-                player.agent.isStopped = true;
                 player.agent.isStopped = true;
                 animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/Win");
-                camera.DOOrthoSize(12f, 10f);               
-                GameObject.Find("ExerciseID").SetActive(false);
-                GameObject.Find("PlayerCombo").SetActive(false);
-                GameObject.Find("Player Score").SetActive(false);
-                GameObject.Find("OptionsButton").SetActive(false);
-                uiManager.finalScorePanel.SetActive(true);
-                if(player.bestPuntuation < player.GetPuntuation())
+                camera.DOOrthoSize(12f, 10f);
+
+                if(!finished)
                 {
-                    player.bestPuntuation = player.GetPuntuation();
-                    PlayerPrefs.SetInt("BestPuntuation", player.bestPuntuation);
-                    uiManager.fsPanelNewBestScore.SetActive(true);
+                    finished = true;
+                    GameObject.Find("ExerciseID").SetActive(false);
+                    GameObject.Find("PlayerCombo").SetActive(false);
+                    GameObject.Find("Player Score").SetActive(false);
+                    GameObject.Find("OptionsButton").SetActive(false);
+                    uiManager.finalScorePanel.SetActive(true);
+                    if (player.bestPuntuation < player.GetPuntuation())
+                    {
+                        player.bestPuntuation = player.GetPuntuation();
+                        PlayerPrefs.SetInt("BestPuntuation", player.bestPuntuation);
+                        uiManager.fsPanelNewBestScore.SetActive(true);
+                    }
+                    uiManager.RefreshFinalScorePanel(player.bestPuntuation, player.GetPuntuation());
                 }
-                uiManager.RefreshFinalScorePanel(player.bestPuntuation, player.GetPuntuation());
             }
 
         }
