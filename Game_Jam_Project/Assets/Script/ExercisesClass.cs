@@ -65,6 +65,7 @@ public class ExercisesClass : MonoBehaviour
             timer.SetText(((int)currentTime+1).ToString());
             if (currentTime <= 0 && mustAskQuestion && !questionAsked)
             {
+                GameObject.Find("AudioManager").GetComponent<AudioManager>().PlayEndExerciseAudio();
                 questionAsked = true;
                 UIManager uiManager = GameObject.Find("GameManager").GetComponent<UIManager>();
                 uiManager.questionPanel.SetActive(true);
@@ -127,7 +128,7 @@ public class ExercisesClass : MonoBehaviour
     IEnumerator FinishExercise(int time, Player ply)
     {
         timer.SetText("0");
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().PlayEndExerciseAudio();
+        if(!questionAsked) GameObject.Find("AudioManager").GetComponent<AudioManager>().PlayEndExerciseAudio();
         yield return new WaitForSeconds(time);
         ply.agent.isStopped = false;
         ply.SetDestination();
