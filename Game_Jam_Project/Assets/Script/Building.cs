@@ -60,7 +60,7 @@ public class Building : MonoBehaviour
             {
                 player.agent.isStopped = true;
                 animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/Win");
-                camera.DOOrthoSize(12f, 10f);
+                camera.DOOrthoSize(30f, 20f);
 
                 if(!finished)
                 {
