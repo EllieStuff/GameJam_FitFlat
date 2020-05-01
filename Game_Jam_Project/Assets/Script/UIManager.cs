@@ -10,10 +10,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] Button woman_button;
     [SerializeField] Button[] difficult_buttons;
     [SerializeField] Button continue_button;
+    public Button welcome_button;
     [SerializeField] Building building;
     [SerializeField] Player player;
 
     public GameObject infoPanel;
+    public GameObject WelcomePanel;
     public GameObject questionPanel;
     public GameObject finalScorePanel;
     public GameObject fsPanelNewBestScore;
@@ -42,10 +44,12 @@ public class UIManager : MonoBehaviour
 
 
         continue_button.onClick.AddListener(() => infoPanel.SetActive(false));
+        welcome_button.onClick.AddListener(() => WelcomeStart());
 
         building = GameObject.Find("Building").GetComponent<Building>();
 
         infoPanel.SetActive(false);
+        WelcomePanel.SetActive(false);
         questionPanel.SetActive(false);
         fsPanelNewBestScore.SetActive(false);
         finalScorePanel.SetActive(false);
@@ -70,10 +74,23 @@ public class UIManager : MonoBehaviour
 
         building.SelectLevel(level);
 
+        //new WaitForSeconds(2);
+
+        //player.SetDestination();
+        WelcomePanel.SetActive(true);
+        
+    }
+
+    public void WelcomeStart()
+
+    {
+        Debug.Log("HEMOS ENTRADO");
+        WelcomePanel.SetActive(false);
+
         new WaitForSeconds(2);
 
         player.SetDestination();
-        
+
     }
 
 
