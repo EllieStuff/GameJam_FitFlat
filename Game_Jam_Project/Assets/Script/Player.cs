@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     [SerializeField] Building building;
     public GameObject timerObj;
     public int bestPuntuation;
+    public Constants.Gender gender = Constants.Gender.MAN;
+    GameObject manChair, womanChair;
 
     // Start is called before the first frame update
 
@@ -30,6 +32,9 @@ public class Player : MonoBehaviour
         bestPuntuation = PlayerPrefs.GetInt("BestPuntuation", 0);
         totalCombo = 1f;
         StartCoroutine("IncreasePuntuation");
+
+        manChair = transform.Find("SM_Chr_Developer_Male_01").Find("SM_Prop_Chair_04").gameObject;
+        womanChair = transform.Find("SM_Chr_Developer_Female_02").Find("SM_Prop_Chair_04").gameObject;
     }
 
     // Update is called once per frame
@@ -72,6 +77,21 @@ public class Player : MonoBehaviour
     public int GetPuntuation()
     {
         return puntuation;
+    }
+
+    public bool IsChairActive()
+    {
+        if (gender == Constants.Gender.MAN)
+            return manChair.activeSelf;
+        else
+            return womanChair.activeSelf;
+    }
+    public void SetChairActive(bool _enable)
+    {
+        if (gender == Constants.Gender.MAN)
+            manChair.SetActive(_enable);
+        else
+            womanChair.SetActive(_enable);
     }
     
 

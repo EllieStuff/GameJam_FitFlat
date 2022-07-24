@@ -35,8 +35,8 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        man_button.onClick.AddListener(() => SelectGenere(Constants.Genere.MAN));
-        woman_button.onClick.AddListener(() => SelectGenere(Constants.Genere.WOMAN));
+        man_button.onClick.AddListener(() => SelectGender(Constants.Gender.MAN));
+        woman_button.onClick.AddListener(() => SelectGender(Constants.Gender.WOMAN));
 
         difficult_buttons[0].onClick.AddListener(() => SelectLevel(Constants.Difficulties.EASY));
         difficult_buttons[1].onClick.AddListener(() => SelectLevel(Constants.Difficulties.MEDIUM));
@@ -55,9 +55,11 @@ public class UIManager : MonoBehaviour
         finalScorePanel.SetActive(false);
     }
 
-    void SelectGenere(Constants.Genere gen)
+    void SelectGender(Constants.Gender gen)
     {
-        if(gen == Constants.Genere.MAN)
+        player.gender = gen;
+        player.SetChairActive(false);
+        if(gen == Constants.Gender.MAN)
         {
             GameObject.Find("SM_Chr_Developer_Female_02").SetActive(false);
             //GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Characters/MAN"), new Vector3(0,0,0), Quaternion.Euler(0, -90, 0)).name = "Player";

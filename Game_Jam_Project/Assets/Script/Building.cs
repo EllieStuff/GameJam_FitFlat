@@ -16,8 +16,11 @@ public class Building : MonoBehaviour
     public UIManager uiManager;
     public bool doingExercise;
     public bool finished = false;
-
     public int exerciseID = 0;
+
+    RuntimeAnimatorController sittingAnimController;
+    bool deactivatingChair = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,8 @@ public class Building : MonoBehaviour
         //infoPanel.SetActive(false);
         doingExercise = false;
         durationExercise = GetDurationExercise();
+        sittingAnimController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/BreathSittingIdle");
+        //PlayerPrefs.SetInt("BestPuntuation", 0);
     }
 
     // Update is called once per frame
@@ -56,7 +61,13 @@ public class Building : MonoBehaviour
             camera.transform.DOMoveX(player.transform.position.x - 2, 1f);
             camera.transform.DOMoveY(player.transform.position.y + 1.5f, 1f);
 
-            if (exerciseID == flat.Length && flat.Length != 0) 
+            if (player.IsChairActive() && !deactivatingChair)
+            {
+                deactivatingChair = true;
+                StartCoroutine(DeactivateChairDelay(4.0f));
+            }
+
+            if (exerciseID >= flat.Length && flat.Length != 0) 
             {
                 player.agent.isStopped = true;
                 animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Controller/Win");
@@ -77,6 +88,9 @@ public class Building : MonoBehaviour
                         uiManager.fsPanelNewBestScore.SetActive(true);
                     }
                     uiManager.RefreshFinalScorePanel(player.bestPuntuation, player.GetPuntuation());
+
+                    for (int i = 0; i < flat.Length; i++)
+                        transform.GetChild(i).gameObject.SetActive(true);
                 }
             }
 
@@ -198,6 +212,8 @@ public class Building : MonoBehaviour
 
         GameObject.Find("Timer").SetActive(false);
         GameObject.Find("SkipButton").SetActive(false);
+
+        ManageActiveFloors();
     }
 
     public void StartExercice()
@@ -206,6 +222,10 @@ public class Building : MonoBehaviour
         camera.transform.DOLookAt(new Vector3(player.transform.position.x , player.transform.position.y + 1, player.transform.position.z), 2f);
         camera.transform.DOMoveY(player.transform.position.y + 2f, 1f);
         camera.DOOrthoSize(2f, 1f);
+
+        ManageActiveFloors();
+        if(animator.runtimeAnimatorController == sittingAnimController)
+            player.SetChairActive(true);
     }
 
     public ExercisesClass GetCurrentFlat()
@@ -221,6 +241,24 @@ public class Building : MonoBehaviour
     public void SkipExercis()
     {
         flat[exerciseID].SkipExercise();
+    }
+
+    void ManageActiveFloors()
+    {
+        for(int i = 0; i < flat.Length + 1; i++)
+        {
+            if (Mathf.Abs(exerciseID + 1 - i) <= 2)
+                transform.GetChild(i).gameObject.SetActive(true);
+            else
+                transform.GetChild(i).gameObject.SetActive(false);
+        }
+    }
+
+    IEnumerator DeactivateChairDelay(float _delay)
+    {
+        yield return new WaitForSeconds(_delay);
+        player.SetChairActive(false);
+        deactivatingChair = false;
     }
 
 }

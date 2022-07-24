@@ -20,7 +20,7 @@ public class AudioManager : MonoBehaviour
     AudioSource backgroundMusic;
     AudioSource soundEffects;
 
-    private void Start()
+    private void Awake()
     {
         AudioSource[] audio = GetComponentsInChildren<AudioSource>();
         backgroundMusic = audio[0];
@@ -33,7 +33,7 @@ public class AudioManager : MonoBehaviour
         SetEffectsVolume(effectsSlider.value);
 
         Button[] buttons = FindObjectsOfType<Button>();
-        foreach(Button b  in buttons)
+        foreach(Button b in buttons)
         {
             b.onClick.AddListener(() => PlayClickButton());
         }
