@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     public Button welcome_button;
     [SerializeField] Building building;
     [SerializeField] Player player;
+    [SerializeField] GameObject malePlayer, femalePlayer;
 
     public GameObject infoPanel;
     public GameObject WelcomePanel;
@@ -61,12 +62,12 @@ public class UIManager : MonoBehaviour
         player.SetChairActive(false);
         if(gen == Constants.Gender.MAN)
         {
-            GameObject.Find("SM_Chr_Developer_Female_02").SetActive(false);
+            femalePlayer.SetActive(false);
             //GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Characters/MAN"), new Vector3(0,0,0), Quaternion.Euler(0, -90, 0)).name = "Player";
         }
         else
         {
-            GameObject.Find("SM_Chr_Developer_Male_01").SetActive(false);
+            malePlayer.SetActive(false);
         }
     }
 

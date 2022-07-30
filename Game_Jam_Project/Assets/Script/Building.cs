@@ -17,9 +17,11 @@ public class Building : MonoBehaviour
     public bool doingExercise;
     public bool finished = false;
     public int exerciseID = 0;
+    //bool startedDoingExercise = false;
 
     RuntimeAnimatorController sittingAnimController;
     bool deactivatingChair = false;
+    bool canRefreshExercise = false;
 
 
     // Start is called before the first frame update
@@ -52,7 +54,8 @@ public class Building : MonoBehaviour
             uiManager.infoPanel.SetActive(true);
             uiManager.RefreshInfoPanel(flat[exerciseID].titleText, flat[exerciseID].explanationText);
 
-            doingExercise = true;
+            doingExercise = canRefreshExercise = true;
+            //player.ReafirmPos(true);
         }
 
         if (!doingExercise)
@@ -60,6 +63,12 @@ public class Building : MonoBehaviour
             camera.transform.DOLookAt(new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z), 1f);
             camera.transform.DOMoveX(player.transform.position.x - 2, 1f);
             camera.transform.DOMoveY(player.transform.position.y + 1.5f, 1f);
+
+            //if (canRefreshExercise)
+            //{
+            //    player.ReafirmPos(false);
+            //    canRefreshExercise = false;
+            //}
 
             if (player.IsChairActive() && !deactivatingChair)
             {
@@ -162,7 +171,7 @@ public class Building : MonoBehaviour
             flat[3] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Breath sitting idle").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
             flat[4] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Air Squad").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
             flat[5] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Pike walk").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
-            flat[6] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Air Squd Bent Arms").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
+            flat[6] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Air Squad").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
             flat[7] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Breath idle").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
             flat[8] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Burpees").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
             flat[9] = GameObject.Instantiate(Resources.Load<GameObject>("Prefabs/Buildings/Exercises/Biceps curl").GetComponent<ExercisesClass>(), GameObject.Find("Exercices").transform);
